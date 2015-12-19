@@ -71,7 +71,7 @@ class Lane extends React.Component {
 
         let idNotes = this.props.lane.notes;
         let allNotes = this.props.allNotes;
-        return filterNotes = idNotes.map((id) => {
+        return idNotes.map((id) => {
             let index = this.findNote(id);
             return allNotes.get(index);
         });
