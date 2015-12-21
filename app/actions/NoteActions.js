@@ -17,5 +17,3 @@ export function update(id, task) {
 export function remove(id) {
     return {type: REMOVE, id}
 }
-
-

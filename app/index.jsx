@@ -11,6 +11,7 @@ main();
 
 function main() {
     let store = createStore(appReducer);
+
     const app = document.createElement('div');
 
     document.body.appendChild(app);
@@ -19,3 +20,4 @@ function main() {
         <Provider store={store}><App /></Provider>
         , app);
 }
+
