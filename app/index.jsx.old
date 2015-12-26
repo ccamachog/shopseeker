@@ -1,10 +1,13 @@
-import './css/main.css';
+import './css/old/main.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRouter from './components/app-router/AppRouter';
+import App from './components/old/App.jsx';
 import { createStore } from 'redux';
-import appReducer from './reducers/AppReducer';
+import appReducer from './reducers/old/AppReducer';
 import { Provider } from 'react-redux';
+
+
+
 
 main();
 
@@ -16,7 +19,7 @@ function main() {
     document.body.appendChild(app);
 
     ReactDOM.render(
-        <Provider store={store}><AppRouter /></Provider>
+        <Provider store={store}><App /></Provider>
         , app);
 }
 

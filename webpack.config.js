@@ -44,9 +44,13 @@ var common = {
         ]
     },
     plugins: [
+
         new HtmlwebpackPlugin({
-            title: 'Kanban app'
+            title: 'Custom template'
+            //template: PATHS.app+'/main_template.html' // Load a custom template
+            //inject: 'body' // Inject all scripts into the body
         })
+
     ]
 };
 if (TARGET === 'start' || !TARGET) {
@@ -80,6 +84,10 @@ if (TARGET === 'start' || !TARGET) {
             port: 5006//process.env.PORT
         },
         plugins: [
+            /*new webpack.ProvidePlugin({
+             $: "jquery",
+             jQuery: "jquery"
+             }),*/
             new webpack.DefinePlugin({
                 // This affects react lib size
                 'process.env.NODE_ENV': JSON.stringify('development')

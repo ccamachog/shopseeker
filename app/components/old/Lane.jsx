@@ -1,8 +1,8 @@
 import React from 'react';
 import Notes from './Notes.jsx';
-import NoteRecord from '../types/NoteRecord';
-import {create as createNote,update as updateNote,remove as removeNote} from '../actions/NoteActions';
-import {attachToLane,detachFromLane, update as updateLane, remove as removeLane} from '../actions/LaneActions';
+import NoteRecord from '../../types/old/NoteRecord';
+import {create as createNote,update as updateNote,remove as removeNote} from '../../actions/old/NoteActions';
+import {attachToLane,detachFromLane, update as updateLane, remove as removeLane} from '../../actions/old/LaneActions';
 import Editable from './Editable.jsx';
 import { connect } from 'react-redux';
 import uuid from 'node-uuid';

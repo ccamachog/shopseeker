@@ -1,7 +1,7 @@
 import React from 'react';
 import Lanes from './Lanes.jsx';
-import LaneRecord from '../types/LaneRecord';
-import {create as createLane} from '../actions/LaneActions';
+import LaneRecord from '../../types/old/LaneRecord';
+import {create as createLane} from '../../actions/old/LaneActions';
 import { connect } from 'react-redux';
 import uuid from 'node-uuid';
 

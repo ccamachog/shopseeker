@@ -1,0 +1,23 @@
+{
+  "name": "shopseeker",
+  "description": "",
+  "main": "index.jsx",
+  "authors": [
+    "Carlos Camacho <ccamachog@gmail.com>",
+    "Felix Martin Arrieta <felixmartinarrieta@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ccamachog/shopseeker",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Swiper": "swiper#~3.2.7"
+  }
+}

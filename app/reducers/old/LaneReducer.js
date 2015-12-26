@@ -1,7 +1,7 @@
-import { CREATE, UPDATE, REMOVE, ATTACHTOLANE, DETACHFROMLANE } from '../actions/LaneActions';
+import { CREATE, UPDATE, REMOVE, ATTACHTOLANE, DETACHFROMLANE } from '../../actions/old/LaneActions';
 
-import NoteRecord from '../types/NoteRecord';
-import LaneRecord from '../types/LaneRecord';
+import NoteRecord from '../../types/old/NoteRecord';
+import LaneRecord from '../../types/old/LaneRecord';
 import {List} from 'immutable';
 
 //state is a list

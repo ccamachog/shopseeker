@@ -1,6 +1,6 @@
-import { CREATE, UPDATE, REMOVE } from '../actions/NoteActions';
+import { CREATE, UPDATE, REMOVE } from '../../actions/old/NoteActions';
 
-import NoteRecord from '../types/NoteRecord';
+import NoteRecord from '../../types/old/NoteRecord';
 import {List} from 'immutable';
 
 //State is a list
