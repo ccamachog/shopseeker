@@ -12,6 +12,7 @@ const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
     app: path.join(__dirname, 'app'),
     build: path.join(__dirname, 'build')
+
 };
 process.env.BABEL_ENV = TARGET;
 var common = {
@@ -40,6 +41,10 @@ var common = {
                 test: /\.jsx?$/,
                 loaders: ['babel'],
                 include: PATHS.app
+            },
+            {
+                test: /\.scss$/,
+                loaders: ["style", "css", "sass"]
             }
         ]
     },
@@ -66,6 +71,8 @@ if (TARGET === 'start' || !TARGET) {
                     loaders: ['style', 'css'],
                     include: PATHS.app
                 }
+
+
             ]
         },
         devtool: 'eval-source-map',
