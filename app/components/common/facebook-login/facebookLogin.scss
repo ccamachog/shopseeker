@@ -1,0 +1,29 @@
+.shopup-facebook-login {
+  text-align: center;
+  margin-top: 10px;
+
+  .btn-fb-login {
+
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    background-color: #3c579e;
+    height: 42px;
+
+  }
+  .text-button {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 15px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+  .logo-fb {
+
+    background: url('../../../images/logo_facebook.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
