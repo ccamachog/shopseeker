@@ -1,4 +1,5 @@
 import React from 'react';
+//import '../../../../bower_components/Swiper/dist/css/swiper.min.css';
 import Swiper from '../../../../bower_components/Swiper/dist/js/swiper.jquery.umd.min.js';
 import './carousel.scss';
 

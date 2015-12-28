@@ -1,0 +1,18 @@
+$K_WIDTH: 40;
+$K_HEIGHT: 40;
+.shopup-map-place {
+  position: absolute;
+  width: $K_WIDTH+px;
+  height: $K_HEIGHT+px;
+  left: -$K_WIDTH / 2 +px;
+  top: -$K_HEIGHT / 2 +px;
+
+  border: 5px solid #f44336;
+  border-radius: $K_HEIGHT+px;
+  background-color: white;
+  text-align: center;
+  color: #3f51b5;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4px;
+}
