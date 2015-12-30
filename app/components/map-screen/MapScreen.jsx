@@ -1,14 +1,23 @@
 import React from 'react';
 import Map from '../common/map/Map';
-import AppBar from 'material-ui/lib/app-bar';
+import Header from '../common/header/Header';
 
 export default class MapScreen extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false
+        }
+    }
+
     render() {
         return (
             <div style={{width:'360px'}}>
-                <AppBar title="Title" iconClassNameRight="material-icons icon-search"/>
+                <Header />
                 <Map/>
             </div>
         );
     }
-}
+
+
+    }

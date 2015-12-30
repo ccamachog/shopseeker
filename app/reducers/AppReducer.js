@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux'
-
-const todoApp = combineReducers({});
+import statusApp from './statusAppReducer';
+const todoApp = combineReducers({
+    statusApp
+});
 
 export default todoApp
