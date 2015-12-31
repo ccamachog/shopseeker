@@ -1,0 +1,7 @@
+.icon-expand-more:before {
+    content: "expand_more";
+}
+
+.icon-search:before {
+    content: "search";
+}

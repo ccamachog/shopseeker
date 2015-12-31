@@ -1,5 +1,8 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 //import notes from './OfferReducer';
-const todoApp = combineReducers({});
+import statusApp from './statusAppReducer';
+const todoApp = combineReducers({
+    statusApp
+});
 
 export default todoApp
