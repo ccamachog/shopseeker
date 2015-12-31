@@ -8,9 +8,9 @@ export default class LoginScreen extends React.Component {
     render() {
         return (
             <div>
-                <div style={{width:'300px',height:'300px'}}>
+                <div style={{width:'100%',height:'30rem'}}>
                     <Carousel/>
-                    <RaisedButton label="Facebook" primary={true}/>
+                    <RaisedButton label="Facebook" primary={true} />
                 </div>
             </div>
         );
