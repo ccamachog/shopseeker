@@ -7,14 +7,14 @@ export default class ImgTagList extends React.Component {
         const tags = this.props.tags;
 
         return (
-            <GridList
-                cellHeight={200}
-                style={{width: 360, height: 640, overflowY: 'auto'}}
-            >
-                {
-                    tags.map(tile => <ImgTag tag={tile} />)
-                }
-            </GridList>
+                <GridList
+                    cellHeight={200}
+                    style={{width: 360, height: 640, overflowY: 'auto'}}
+                >
+                    {
+                        tags.map(tile => <ImgTag tag={tile}/>)
+                    }
+                </GridList>
         );
     }
 }

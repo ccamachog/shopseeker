@@ -14,8 +14,11 @@ export default class ImgTag extends React.Component {
                 titlePosition="bottom"
                 padding={0}
                 title={tag.name}
+                titleBackground={tag.color}
                 style={{backgroundColor: tag.color}}
-            ><img src={tag.img}/></GridTile>
+            >
+                <img src={tag.img} />
+            </GridTile>
         );
     }
 }
