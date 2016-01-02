@@ -1,10 +1,8 @@
 import React from 'react';
 import Header from '../common/header/Header';
+import ImgTagList from '../common/img-tag-list/ImgTagList';
 import FlatFooter from '../common/flat-footer/FlatFooter';
-import GridList from 'material-ui/lib/grid-list/grid-list';
-import GridTile from 'material-ui/lib/grid-list/grid-tile';
-import IconButton from 'material-ui/lib/icon-button';
-import CheckIcon from 'material-ui/lib/svg-icons/navigation/check';
+
 import {List, Record} from 'immutable';
 import Tag from '../../types/TagRecord';
 
@@ -68,21 +66,7 @@ export default class TagsScreen extends React.Component {
         return (
             <div style={{width:'360px'}}>
                 <Header title="Tags Screen" />
-                <GridList
-                    cellHeight={200}
-                    style={{width: 360, height: 640, overflowY: 'auto'}}
-                >
-                    {
-                        tags.map(tile => <GridTile
-                            actionIcon={<IconButton><CheckIcon color="white"/></IconButton>}
-                            actionPosition="right"
-                            titlePosition="bottom"
-                            padding={0}
-                            title={tile.name}
-                            style={{backgroundColor: tile.color}}
-                        ><img src={tile.img}/></GridTile>)
-                    }
-                </GridList>
+                <ImgTagList tags={tags} />
                 <FlatFooter />
             </div>
         );
