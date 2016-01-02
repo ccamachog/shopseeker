@@ -13,7 +13,7 @@ export default class MapScreen extends React.Component {
     render() {
         return (
             <div style={{width:'360px'}}>
-                <Header />
+                <Header title="Map Screen" />
                 <Map/>
             </div>
         );
