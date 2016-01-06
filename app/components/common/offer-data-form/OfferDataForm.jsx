@@ -6,7 +6,6 @@ import Toggle from 'material-ui/lib/toggle';
 import Checkbox from 'material-ui/lib/checkbox';
 import FontIcon from 'material-ui/lib/font-icon';
 import TextField from 'material-ui/lib/text-field';
-import TagAutoComplete from './TagAutocomplete';
 import FlatButton from 'material-ui/lib/flat-button';
 import Dialog from 'material-ui/lib/dialog';
 import AppBar from 'material-ui/lib/app-bar';
