@@ -38,7 +38,7 @@ export default class SideNav extends React.Component {
                     <Divider/>
                     <List>
                         <ListItem>Mis Ofertas</ListItem>
-                        <ListItem>Faoritos</ListItem>
+                        <ListItem>Favoritos</ListItem>
                     </List>
                 </LeftNav>
             </div>

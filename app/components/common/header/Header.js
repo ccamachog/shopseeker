@@ -9,9 +9,11 @@ class Header extends React.Component {
     }
 
     render() {
+        let _title = this.props.title || 'Title';
+
         return (
             <div>
-                <AppBar title="Title" iconClassNameRight="material-icons icon-search"
+                <AppBar title={_title} iconClassNameRight="material-icons icon-search"
                         onLeftIconButtonTouchTap={this.onClickMenu}/>
                 <SideNav open={this.props.isMenuOpen} onRequestChange={this.requestChange}/>
             </div>
