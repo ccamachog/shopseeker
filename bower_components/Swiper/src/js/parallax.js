@@ -1,6 +1,6 @@
 /*=========================
-  Parallax
-  ===========================*/
+ Parallax
+ ===========================*/
 function setParallaxTransform(el, progress) {
     el = $(el);
     var p, pX, pY;
@@ -28,20 +28,20 @@ function setParallaxTransform(el, progress) {
         pX = parseInt(pX, 10) * progress * rtlFactor + '%';
     }
     else {
-        pX = pX * progress * rtlFactor + 'px' ;
+        pX = pX * progress * rtlFactor + 'px';
     }
     if ((pY).indexOf('%') >= 0) {
         pY = parseInt(pY, 10) * progress + '%';
     }
     else {
-        pY = pY * progress + 'px' ;
+        pY = pY * progress + 'px';
     }
 
     el.transform('translate3d(' + pX + ', ' + pY + ',0px)');
 }
 s.parallax = {
     setTranslate: function () {
-        s.container.children('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]').each(function(){
+        s.container.children('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]').each(function () {
             setParallaxTransform(this, s.progress);
 
         });
@@ -55,7 +55,7 @@ s.parallax = {
     },
     setTransition: function (duration) {
         if (typeof duration === 'undefined') duration = s.params.speed;
-        s.container.find('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]').each(function(){
+        s.container.find('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]').each(function () {
             var el = $(this);
             var parallaxDuration = parseInt(el.attr('data-swiper-parallax-duration'), 10) || duration;
             if (duration === 0) parallaxDuration = 0;

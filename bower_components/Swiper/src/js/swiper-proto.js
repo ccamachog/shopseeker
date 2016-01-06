@@ -1,6 +1,6 @@
 /*==================================================
-    Prototype
-====================================================*/
+ Prototype
+ ====================================================*/
 Swiper.prototype = {
     isSafari: (function () {
         var ua = navigator.userAgent.toLowerCase();
@@ -11,15 +11,15 @@ Swiper.prototype = {
         return Object.prototype.toString.apply(arr) === '[object Array]';
     },
     /*==================================================
-    Browser
-    ====================================================*/
+     Browser
+     ====================================================*/
     browser: {
         ie: window.navigator.pointerEnabled || window.navigator.msPointerEnabled,
         ieTouch: (window.navigator.msPointerEnabled && window.navigator.msMaxTouchPoints > 1) || (window.navigator.pointerEnabled && window.navigator.maxTouchPoints > 1)
     },
     /*==================================================
-    Devices
-    ====================================================*/
+     Devices
+     ====================================================*/
     device: (function () {
         var ua = navigator.userAgent;
         var android = ua.match(/(Android);?[\s\/]+([\d.]+)?/);
@@ -32,14 +32,14 @@ Swiper.prototype = {
         };
     })(),
     /*==================================================
-    Feature Detection
-    ====================================================*/
+     Feature Detection
+     ====================================================*/
     support: {
-        touch : (window.Modernizr && Modernizr.touch === true) || (function () {
+        touch: (window.Modernizr && Modernizr.touch === true) || (function () {
             return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
         })(),
 
-        transforms3d : (window.Modernizr && Modernizr.csstransforms3d === true) || (function () {
+        transforms3d: (window.Modernizr && Modernizr.csstransforms3d === true) || (function () {
             var div = document.createElement('div').style;
             return ('webkitPerspective' in div || 'MozPerspective' in div || 'OPerspective' in div || 'MsPerspective' in div || 'perspective' in div);
         })(),
@@ -57,7 +57,7 @@ Swiper.prototype = {
         })()
     },
     /*==================================================
-    Plugins
-    ====================================================*/
+     Plugins
+     ====================================================*/
     plugins: {}
 };

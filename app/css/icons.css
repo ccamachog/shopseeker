@@ -5,3 +5,16 @@
 .icon-search:before {
     content: "search";
 }
+
+.icon-local-offer:before {
+    content: "local_offer";
+}
+
+.icon-arrow-back:before {
+    content: "arrow_back";
+}
+
+.icon-more_vert:before {
+    content: "more_vert";
+}
+

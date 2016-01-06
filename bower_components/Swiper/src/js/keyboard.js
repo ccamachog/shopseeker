@@ -1,6 +1,6 @@
 /*=========================
-  Keyboard Control
-  ===========================*/
+ Keyboard Control
+ ===========================*/
 function handleKeyboard(e) {
     if (e.originalEvent) e = e.originalEvent; //jquery fix
     var kc = e.keyCode || e.charCode;

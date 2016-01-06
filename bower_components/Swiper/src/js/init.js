@@ -1,6 +1,6 @@
 /*=========================
-  Init/Destroy
-  ===========================*/
+ Init/Destroy
+ ===========================*/
 s.init = function () {
     if (s.params.loop) s.createLoop();
     s.updateContainerSize();
@@ -64,10 +64,10 @@ s.cleanupStyles = function () {
     if (s.slides && s.slides.length) {
         s.slides
             .removeClass([
-              s.params.slideVisibleClass,
-              s.params.slideActiveClass,
-              s.params.slideNextClass,
-              s.params.slidePrevClass
+                s.params.slideVisibleClass,
+                s.params.slideActiveClass,
+                s.params.slideNextClass,
+                s.params.slidePrevClass
             ].join(' '))
             .removeAttr('style')
             .removeAttr('data-swiper-column')

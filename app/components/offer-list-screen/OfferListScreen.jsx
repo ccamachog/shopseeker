@@ -1,15 +1,19 @@
 import React from 'react';
-import FlatHeader from '../common/FlatHeader.jsx';
-import FloatFooter from '../common/FloatFooter.jsx';
-import ImgOfferList from '../common/ImgOfferList.jsx';
+import OfferCard from './OfferCard.jsx';
+import List from 'material-ui/lib/lists/list';
+import ListItem from 'material-ui/lib/lists/list-item';
+
 
 export default class OfferListScreen extends React.Component {
     render() {
-        return (<div className="offer-list-screen">
-            ~OfferListScreen~
-            <flat-header />
-            <img-offer-list />
-            <float-footer />
-        </div>);
+        return (
+            <List>
+                <ListItem ><OfferCard/></ListItem>
+                <ListItem ><OfferCard/></ListItem>
+                <ListItem ><OfferCard/></ListItem>
+                <ListItem ><OfferCard/></ListItem>
+                <ListItem ><OfferCard/></ListItem>
+            </List>
+        );
     }
 }

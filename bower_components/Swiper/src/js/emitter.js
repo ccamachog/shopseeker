@@ -1,7 +1,7 @@
 /*=========================
-  Events/Callbacks/Plugins Emitter
-  ===========================*/
-function normalizeEventName (eventName) {
+ Events/Callbacks/Plugins Emitter
+ ===========================*/
+function normalizeEventName(eventName) {
     if (eventName.indexOf('on') !== 0) {
         if (eventName[0] !== eventName[0].toUpperCase()) {
             eventName = 'on' + eventName[0].toUpperCase() + eventName.substring(1);
@@ -12,9 +12,7 @@ function normalizeEventName (eventName) {
     }
     return eventName;
 }
-s.emitterEventListeners = {
-
-};
+s.emitterEventListeners = {};
 s.emit = function (eventName) {
     // Trigger callbacks
     if (s.params[eventName]) {
@@ -46,7 +44,7 @@ s.off = function (eventName, handler) {
     }
     if (!s.emitterEventListeners[eventName] || s.emitterEventListeners[eventName].length === 0) return;
     for (i = 0; i < s.emitterEventListeners[eventName].length; i++) {
-        if(s.emitterEventListeners[eventName][i] === handler) s.emitterEventListeners[eventName].splice(i, 1);
+        if (s.emitterEventListeners[eventName][i] === handler) s.emitterEventListeners[eventName].splice(i, 1);
     }
     return s;
 };

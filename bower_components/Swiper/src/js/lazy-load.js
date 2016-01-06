@@ -1,6 +1,6 @@
 /*=========================
-  Images Lazy Loading
-  ===========================*/
+ Images Lazy Loading
+ ===========================*/
 s.lazy = {
     initialImageLoaded: false,
     loadImageInSlide: function (index, loadInDuplicate) {
@@ -67,7 +67,7 @@ s.lazy = {
         }
         else {
             if (s.params.slidesPerView > 1) {
-                for (i = s.activeIndex; i < s.activeIndex + s.params.slidesPerView ; i++) {
+                for (i = s.activeIndex; i < s.activeIndex + s.params.slidesPerView; i++) {
                     if (s.slides[i]) s.lazy.loadImageInSlide(i);
                 }
             }
@@ -82,7 +82,7 @@ s.lazy = {
                     if (s.slides[i]) s.lazy.loadImageInSlide(i);
                 }
                 // Prev Slides
-                for (i = s.activeIndex - s.params.slidesPerView; i < s.activeIndex ; i++) {
+                for (i = s.activeIndex - s.params.slidesPerView; i < s.activeIndex; i++) {
                     if (s.slides[i]) s.lazy.loadImageInSlide(i);
                 }
             }

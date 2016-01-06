@@ -19,7 +19,11 @@ function main() {
     document.body.appendChild(app);
 
     ReactDOM.render(
-        <Provider store={store}><AppRouter /></Provider>
+        <Provider store={store}>
+            <div style={{width:'360px'}}>
+                <AppRouter />
+            </div>
+        </Provider>
         , app);
 }
 

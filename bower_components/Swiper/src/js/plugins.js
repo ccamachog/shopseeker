@@ -1,6 +1,6 @@
 /*=========================
-  Plugins API. Collect all and init all plugins
-  ===========================*/
+ Plugins API. Collect all and init all plugins
+ ===========================*/
 s._plugins = [];
 for (var plugin in s.plugins) {
     var p = s.plugins[plugin](s, s.params[plugin]);

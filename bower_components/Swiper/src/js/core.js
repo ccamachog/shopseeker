@@ -30,7 +30,7 @@ var defaults = {
         stretch: 0,
         depth: 100,
         modifier: 1,
-        slideShadows : true
+        slideShadows: true
     },
     cube: {
         slideShadows: true,
@@ -149,32 +149,32 @@ var defaults = {
     // Callbacks
     runCallbacksOnInit: true
     /*
-    Callbacks:
-    onInit: function (swiper)
-    onDestroy: function (swiper)
-    onClick: function (swiper, e)
-    onTap: function (swiper, e)
-    onDoubleTap: function (swiper, e)
-    onSliderMove: function (swiper, e)
-    onSlideChangeStart: function (swiper)
-    onSlideChangeEnd: function (swiper)
-    onTransitionStart: function (swiper)
-    onTransitionEnd: function (swiper)
-    onImagesReady: function (swiper)
-    onProgress: function (swiper, progress)
-    onTouchStart: function (swiper, e)
-    onTouchMove: function (swiper, e)
-    onTouchMoveOpposite: function (swiper, e)
-    onTouchEnd: function (swiper, e)
-    onReachBeginning: function (swiper)
-    onReachEnd: function (swiper)
-    onSetTransition: function (swiper, duration)
-    onSetTranslate: function (swiper, translate)
-    onAutoplayStart: function (swiper)
-    onAutoplayStop: function (swiper),
-    onLazyImageLoad: function (swiper, slide, image)
-    onLazyImageReady: function (swiper, slide, image)
-    */
+     Callbacks:
+     onInit: function (swiper)
+     onDestroy: function (swiper)
+     onClick: function (swiper, e)
+     onTap: function (swiper, e)
+     onDoubleTap: function (swiper, e)
+     onSliderMove: function (swiper, e)
+     onSlideChangeStart: function (swiper)
+     onSlideChangeEnd: function (swiper)
+     onTransitionStart: function (swiper)
+     onTransitionEnd: function (swiper)
+     onImagesReady: function (swiper)
+     onProgress: function (swiper, progress)
+     onTouchStart: function (swiper, e)
+     onTouchMove: function (swiper, e)
+     onTouchMoveOpposite: function (swiper, e)
+     onTouchEnd: function (swiper, e)
+     onReachBeginning: function (swiper)
+     onReachEnd: function (swiper)
+     onSetTransition: function (swiper, duration)
+     onSetTranslate: function (swiper, translate)
+     onAutoplayStart: function (swiper)
+     onAutoplayStop: function (swiper),
+     onLazyImageLoad: function (swiper, slide, image)
+     onLazyImageReady: function (swiper, slide, image)
+     */
 
 };
 var initialVirtualTranslate = params && params.virtualTranslate;
@@ -215,9 +215,9 @@ s.originalParams = originalParams;
 // Classname
 s.classNames = [];
 /*=========================
-  Dom Library and plugins
-  ===========================*/
-if (typeof $ !== 'undefined' && typeof Dom7 !== 'undefined'){
+ Dom Library and plugins
+ ===========================*/
+if (typeof $ !== 'undefined' && typeof Dom7 !== 'undefined') {
     $ = Dom7;
 }
 if (typeof $ === 'undefined') {
@@ -233,15 +233,15 @@ if (typeof $ === 'undefined') {
 s.$ = $;
 
 /*=========================
-  Breakpoints
-  ===========================*/
+ Breakpoints
+ ===========================*/
 s.currentBreakpoint = undefined;
 s.getActiveBreakpoint = function () {
     //Get breakpoint for window width
     if (!s.params.breakpoints) return false;
     var breakpoint = false;
     var points = [], point;
-    for ( point in s.params.breakpoints ) {
+    for (point in s.params.breakpoints) {
         if (s.params.breakpoints.hasOwnProperty(point)) {
             points.push(point);
         }
@@ -262,7 +262,7 @@ s.setBreakpoint = function () {
     var breakpoint = s.getActiveBreakpoint();
     if (breakpoint && s.currentBreakpoint !== breakpoint) {
         var breakPointsParams = breakpoint in s.params.breakpoints ? s.params.breakpoints[breakpoint] : s.originalParams;
-        for ( var param in breakPointsParams ) {
+        for (var param in breakPointsParams) {
             s.params[param] = breakPointsParams[param];
         }
         s.currentBreakpoint = breakpoint;
@@ -274,8 +274,8 @@ if (s.params.breakpoints) {
 }
 
 /*=========================
-  Preparation - Define Container, Wrapper and Pagination
-  ===========================*/
+ Preparation - Define Container, Wrapper and Pagination
+ ===========================*/
 s.container = $(container);
 if (s.container.length === 0) return;
 if (s.container.length > 1) {
@@ -394,8 +394,8 @@ s.progress = 0;
 s.velocity = 0;
 
 /*=========================
-  Locks, unlocks
-  ===========================*/
+ Locks, unlocks
+ ===========================*/
 s.lockSwipeToNext = function () {
     s.params.allowSwipeToNext = false;
 };
@@ -416,14 +416,14 @@ s.unlockSwipes = function () {
 };
 
 /*=========================
-  Round helper
-  ===========================*/
+ Round helper
+ ===========================*/
 function round(a) {
     return Math.floor(a);
 }
 /*=========================
-  Set grab cursor
-  ===========================*/
+ Set grab cursor
+ ===========================*/
 if (s.params.grabCursor) {
     s.container[0].style.cursor = 'move';
     s.container[0].style.cursor = '-webkit-grab';
@@ -431,16 +431,18 @@ if (s.params.grabCursor) {
     s.container[0].style.cursor = 'grab';
 }
 /*=========================
-  Update on Images Ready
-  ===========================*/
+ Update on Images Ready
+ ===========================*/
 s.imagesToLoad = [];
 s.imagesLoaded = 0;
 
 s.loadImage = function (imgElement, src, srcset, checkForComplete, callback) {
     var image;
-    function onReady () {
+
+    function onReady() {
         if (callback) callback();
     }
+
     if (!imgElement.complete || !checkForComplete) {
         if (src) {
             image = new window.Image();
@@ -470,14 +472,15 @@ s.preloadImages = function () {
             s.emit('onImagesReady', s);
         }
     }
+
     for (var i = 0; i < s.imagesToLoad.length; i++) {
         s.loadImage(s.imagesToLoad[i], (s.imagesToLoad[i].currentSrc || s.imagesToLoad[i].getAttribute('src')), (s.imagesToLoad[i].srcset || s.imagesToLoad[i].getAttribute('srcset')), true, _onReady);
     }
 };
 
 /*=========================
-  Autoplay
-  ===========================*/
+ Autoplay
+ ===========================*/
 s.autoplayTimeoutId = undefined;
 s.autoplaying = false;
 s.autoplayPaused = false;
@@ -539,8 +542,8 @@ s.pauseAutoplay = function (speed) {
     }
 };
 /*=========================
-  Min/Max Translate
-  ===========================*/
+ Min/Max Translate
+ ===========================*/
 s.minTranslate = function () {
     return (-s.snapGrid[0]);
 };
@@ -548,8 +551,8 @@ s.maxTranslate = function () {
     return (-s.snapGrid[s.snapGrid.length - 1]);
 };
 /*=========================
-  Slider/slides sizes
-  ===========================*/
+ Slider/slides sizes
+ ===========================*/
 s.updateAutoHeight = function () {
     // Update Height
     var newHeight = s.slides.eq(s.activeIndex)[0].offsetHeight;
@@ -631,7 +634,7 @@ s.updateSlidesSize = function () {
             if (s.params.slidesPerColumnFill === 'column') {
                 column = Math.floor(i / slidesPerColumn);
                 row = i - column * slidesPerColumn;
-                if (column > numFullColumns || (column === numFullColumns && row === slidesPerColumn-1)) {
+                if (column > numFullColumns || (column === numFullColumns && row === slidesPerColumn - 1)) {
                     if (++row >= slidesPerColumn) {
                         row = 0;
                         column++;
@@ -696,7 +699,7 @@ s.updateSlidesSize = function () {
 
         prevSlideSize = slideSize;
 
-        index ++;
+        index++;
     }
     s.virtualSize = Math.max(s.virtualSize, s.size) + s.params.slidesOffsetAfter;
     var newSlidesGrid;
@@ -756,8 +759,8 @@ s.updateSlidesOffset = function () {
 };
 
 /*=========================
-  Slider/slides progress
-  ===========================*/
+ Slider/slides progress
+ ===========================*/
 s.updateSlidesProgress = function (translate) {
     if (typeof translate === 'undefined') {
         translate = s.translate || 0;
@@ -812,7 +815,7 @@ s.updateProgress = function (translate) {
 s.updateActiveIndex = function () {
     var translate = s.rtl ? s.translate : -s.translate;
     var newActiveIndex, i, snapIndex;
-    for (i = 0; i < s.slidesGrid.length; i ++) {
+    for (i = 0; i < s.slidesGrid.length; i++) {
         if (typeof s.slidesGrid[i + 1] !== 'undefined') {
             if (translate >= s.slidesGrid[i] && translate < s.slidesGrid[i + 1] - (s.slidesGrid[i + 1] - s.slidesGrid[i]) / 2) {
                 newActiveIndex = i;
@@ -830,9 +833,9 @@ s.updateActiveIndex = function () {
     // Normalize slideIndex
     if (newActiveIndex < 0 || typeof newActiveIndex === 'undefined') newActiveIndex = 0;
     // for (i = 0; i < s.slidesGrid.length; i++) {
-        // if (- translate >= s.slidesGrid[i]) {
-            // newActiveIndex = i;
-        // }
+    // if (- translate >= s.slidesGrid[i]) {
+    // newActiveIndex = i;
+    // }
     // }
     snapIndex = Math.floor(newActiveIndex / s.params.slidesPerGroup);
     if (snapIndex >= s.snapGrid.length) snapIndex = s.snapGrid.length - 1;
@@ -847,8 +850,8 @@ s.updateActiveIndex = function () {
 };
 
 /*=========================
-  Classes
-  ===========================*/
+ Classes
+ ===========================*/
 s.updateClasses = function () {
     s.slides.removeClass(s.params.slideActiveClass + ' ' + s.params.slideNextClass + ' ' + s.params.slidePrevClass);
     var activeSlide = s.slides.eq(s.activeIndex);
@@ -862,7 +865,7 @@ s.updateClasses = function () {
         s.bullets.removeClass(s.params.bulletActiveClass);
         var bulletIndex;
         if (s.params.loop) {
-            bulletIndex = Math.ceil(s.activeIndex - s.loopedSlides)/s.params.slidesPerGroup;
+            bulletIndex = Math.ceil(s.activeIndex - s.loopedSlides) / s.params.slidesPerGroup;
             if (bulletIndex > s.slides.length - 1 - s.loopedSlides * 2) {
                 bulletIndex = bulletIndex - (s.slides.length - s.loopedSlides * 2);
             }
@@ -912,8 +915,8 @@ s.updateClasses = function () {
 };
 
 /*=========================
-  Pagination
-  ===========================*/
+ Pagination
+ ===========================*/
 s.updatePagination = function () {
     if (!s.params.pagination) return;
     if (s.paginationContainer && s.paginationContainer.length > 0) {
@@ -924,7 +927,7 @@ s.updatePagination = function () {
                 bulletsHTML += s.params.paginationBulletRender(i, s.params.bulletClass);
             }
             else {
-                bulletsHTML += '<' + s.params.paginationElement+' class="' + s.params.bulletClass + '"></' + s.params.paginationElement + '>';
+                bulletsHTML += '<' + s.params.paginationElement + ' class="' + s.params.bulletClass + '"></' + s.params.paginationElement + '>';
             }
         }
         s.paginationContainer.html(bulletsHTML);
@@ -935,8 +938,8 @@ s.updatePagination = function () {
     }
 };
 /*=========================
-  Common update method
-  ===========================*/
+ Common update method
+ ===========================*/
 s.update = function (updateTranslate) {
     s.updateContainerSize();
     s.updateSlidesSize();
@@ -952,6 +955,7 @@ s.update = function (updateTranslate) {
         s.updateActiveIndex();
         s.updateClasses();
     }
+
     if (updateTranslate) {
         var translated, newTranslate;
         if (s.controller && s.controller.spline) {
@@ -981,8 +985,8 @@ s.update = function (updateTranslate) {
 };
 
 /*=========================
-  Resize Handler
-  ===========================*/
+ Resize Handler
+ ===========================*/
 s.onResize = function (forceUpdatePagination) {
     //Breakpoints
     if (s.params.breakpoints) {
@@ -1028,17 +1032,17 @@ s.onResize = function (forceUpdatePagination) {
 };
 
 /*=========================
-  Events
-  ===========================*/
+ Events
+ ===========================*/
 
 //Define Touch Events
 var desktopEvents = ['mousedown', 'mousemove', 'mouseup'];
 if (window.navigator.pointerEnabled) desktopEvents = ['pointerdown', 'pointermove', 'pointerup'];
 else if (window.navigator.msPointerEnabled) desktopEvents = ['MSPointerDown', 'MSPointerMove', 'MSPointerUp'];
 s.touchEvents = {
-    start : s.support.touch || !s.params.simulateTouch  ? 'touchstart' : desktopEvents[0],
-    move : s.support.touch || !s.params.simulateTouch ? 'touchmove' : desktopEvents[1],
-    end : s.support.touch || !s.params.simulateTouch ? 'touchend' : desktopEvents[2]
+    start: s.support.touch || !s.params.simulateTouch ? 'touchstart' : desktopEvents[0],
+    move: s.support.touch || !s.params.simulateTouch ? 'touchmove' : desktopEvents[1],
+    end: s.support.touch || !s.params.simulateTouch ? 'touchend' : desktopEvents[2]
 };
 
 
@@ -1101,8 +1105,8 @@ s.detachEvents = function () {
 };
 
 /*=========================
-  Handle Clicks
-  ===========================*/
+ Handle Clicks
+ ===========================*/
 // Prevent Clicks
 s.allowClick = true;
 s.preventClicks = function (e) {
@@ -1133,8 +1137,8 @@ s.onClickIndex = function (e) {
 };
 
 /*=========================
-  Handle Touches
-  ===========================*/
+ Handle Touches
+ ===========================*/
 function findElementInEvent(e, selector) {
     var el = $(e.target);
     if (!el.is(selector)) {
@@ -1181,7 +1185,7 @@ s.updateClickedSlide = function (e) {
             if (s.animating) return;
             realIndex = $(s.clickedSlide).attr('data-swiper-slide-index');
             if (s.params.centeredSlides) {
-                if ((slideToIndex < s.loopedSlides - s.params.slidesPerView/2) || (slideToIndex > s.slides.length - s.loopedSlides + s.params.slidesPerView/2)) {
+                if ((slideToIndex < s.loopedSlides - s.params.slidesPerView / 2) || (slideToIndex > s.slides.length - s.loopedSlides + s.params.slidesPerView / 2)) {
                     s.fixLoop();
                     slideToIndex = s.wrapper.children('.' + s.params.slideClass + '[data-swiper-slide-index="' + realIndex + '"]:not(.swiper-slide-duplicate)').eq(0).index();
                     setTimeout(function () {
@@ -1219,11 +1223,11 @@ var isTouched,
     currentTranslate,
     startTranslate,
     allowThresholdMove,
-    // Form elements to match
+// Form elements to match
     formElements = 'input, select, textarea, button',
-    // Last click time
+// Last click time
     lastClickTime = Date.now(), clickTimeout,
-    //Velocities
+//Velocities
     velocities = [],
     allowMomentumBounce;
 
@@ -1257,7 +1261,7 @@ s.onTouchStart = function (e) {
     var startY = s.touches.currentY = e.type === 'touchstart' ? e.targetTouches[0].pageY : e.pageY;
 
     // Do NOT start if iOS edge swipe is detected. Otherwise iOS app (UIWebView) cannot swipe-to-go-back anymore
-    if(s.device.ios && s.params.iOSEdgeSwipeDetection && startX <= s.params.iOSEdgeSwipeThreshold) {
+    if (s.device.ios && s.params.iOSEdgeSwipeDetection && startX <= s.params.iOSEdgeSwipeThreshold) {
         return;
     }
 
@@ -1328,7 +1332,7 @@ s.onTouchMove = function (e) {
         }
     }
     if (!isTouched) return;
-    if (isScrolling)  {
+    if (isScrolling) {
         isTouched = false;
         return;
     }
@@ -1539,7 +1543,7 @@ s.onTouchEnd = function (e) {
             var momentumDistance = s.velocity * momentumDuration;
 
             var newPosition = s.translate + momentumDistance;
-            if (s.rtl) newPosition = - newPosition;
+            if (s.rtl) newPosition = -newPosition;
             var doBounce = false;
             var afterBouncePosition;
             var bounceAmount = Math.abs(s.velocity) * 20 * s.params.freeModeMomentumBounceRatio;
@@ -1584,7 +1588,7 @@ s.onTouchEnd = function (e) {
                 } else {
                     newPosition = s.snapGrid[nextSlide - 1];
                 }
-                if (!s.rtl) newPosition = - newPosition;
+                if (!s.rtl) newPosition = -newPosition;
             }
             //Fix duration
             if (s.velocity !== 0) {
@@ -1695,8 +1699,8 @@ s.onTouchEnd = function (e) {
     }
 };
 /*=========================
-  Transitions
-  ===========================*/
+ Transitions
+ ===========================*/
 s._slideTo = function (slideIndex, speed) {
     return s.slideTo(slideIndex, speed, true, true);
 };
@@ -1707,7 +1711,7 @@ s.slideTo = function (slideIndex, speed, runCallbacks, internal) {
     s.snapIndex = Math.floor(slideIndex / s.params.slidesPerGroup);
     if (s.snapIndex >= s.snapGrid.length) s.snapIndex = s.snapGrid.length - 1;
 
-    var translate = - s.snapGrid[s.snapIndex];
+    var translate = -s.snapGrid[s.snapIndex];
     // Stop autoplay
     if (s.params.autoplay && s.autoplaying) {
         if (internal || !s.params.autoplayDisableOnInteraction) {
@@ -1722,7 +1726,7 @@ s.slideTo = function (slideIndex, speed, runCallbacks, internal) {
 
     // Normalize slideIndex
     for (var i = 0; i < s.slidesGrid.length; i++) {
-        if (- Math.floor(translate * 100) >= Math.floor(s.slidesGrid[i] * 100)) {
+        if (-Math.floor(translate * 100) >= Math.floor(s.slidesGrid[i] * 100)) {
             slideIndex = i;
         }
     }
@@ -1732,7 +1736,7 @@ s.slideTo = function (slideIndex, speed, runCallbacks, internal) {
         return false;
     }
     if (!s.params.allowSwipeToPrev && translate > s.translate && translate > s.maxTranslate()) {
-        if ((s.activeIndex || 0) !== slideIndex ) return false;
+        if ((s.activeIndex || 0) !== slideIndex) return false;
     }
 
     // Update Index
@@ -1846,8 +1850,8 @@ s.slideReset = function (runCallbacks, speed, internal) {
 };
 
 /*=========================
-  Translate/transition helpers
-  ===========================*/
+ Translate/transition helpers
+ ===========================*/
 s.setWrapperTransition = function (duration, byController) {
     s.wrapper.transition(duration);
     if (s.params.effect !== 'slide' && s.effects[s.params.effect]) {
@@ -1930,8 +1934,8 @@ s.getTranslate = function (el, axis) {
     if (window.WebKitCSSMatrix) {
         curTransform = curStyle.transform || curStyle.webkitTransform;
         if (curTransform.split(',').length > 6) {
-            curTransform = curTransform.split(', ').map(function(a){
-                return a.replace(',','.');
+            curTransform = curTransform.split(', ').map(function (a) {
+                return a.replace(',', '.');
             }).join(', ');
         }
         // Some old versions of Webkit choke when 'none' is passed; pass
@@ -1939,7 +1943,7 @@ s.getTranslate = function (el, axis) {
         transformMatrix = new window.WebKitCSSMatrix(curTransform === 'none' ? '' : curTransform);
     }
     else {
-        transformMatrix = curStyle.MozTransform || curStyle.OTransform || curStyle.MsTransform || curStyle.msTransform  || curStyle.transform || curStyle.getPropertyValue('transform').replace('translate(', 'matrix(1, 0, 0, 1,');
+        transformMatrix = curStyle.MozTransform || curStyle.OTransform || curStyle.MsTransform || curStyle.msTransform || curStyle.transform || curStyle.getPropertyValue('transform').replace('translate(', 'matrix(1, 0, 0, 1,');
         matrix = transformMatrix.toString().split(',');
     }
 
@@ -1976,8 +1980,8 @@ s.getWrapperTranslate = function (axis) {
 };
 
 /*=========================
-  Observer
-  ===========================*/
+ Observer
+ ===========================*/
 s.observers = [];
 function initObserver(target, options) {
     options = options || {};
@@ -2019,8 +2023,8 @@ s.disconnectObservers = function () {
     s.observers = [];
 };
 /*=========================
-  Loop
-  ===========================*/
+ Loop
+ ===========================*/
 // Create looped slides
 s.createLoop = function () {
     // Remove duplicated slides
@@ -2028,7 +2032,7 @@ s.createLoop = function () {
 
     var slides = s.wrapper.children('.' + s.params.slideClass);
 
-    if(s.params.slidesPerView === 'auto' && !s.params.loopedSlides) s.params.loopedSlides = slides.length;
+    if (s.params.slidesPerView === 'auto' && !s.params.loopedSlides) s.params.loopedSlides = slides.length;
 
     s.loopedSlides = parseInt(s.params.loopedSlides || s.params.slidesPerView, 10);
     s.loopedSlides = s.loopedSlides + s.params.loopAdditionalSlides;
@@ -2070,8 +2074,8 @@ s.fixLoop = function () {
     }
 };
 /*=========================
-  Append/Prepend/Remove Slides
-  ===========================*/
+ Append/Prepend/Remove Slides
+ ===========================*/
 s.appendSlide = function (slides) {
     if (s.params.loop) {
         s.destroyLoop();

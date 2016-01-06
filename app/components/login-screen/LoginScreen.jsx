@@ -10,15 +10,10 @@ export default class LoginScreen extends React.Component {
 
     render() {
         return (
-            <div style={{width:'400px'}} className="shopup-login-screen">
-                {/* <AppBar
-                 title="Title"
-                 iconClassNameRight="material-icons icon-expand-more" /> */}
-                <div style={{width:'400px',height:'300px'}}>
+            <div className="shopup-login-screen">
+                <div style={{width:'100%',height:'300px'}}>
                     <Carousel/>
-                    <RaisedButton label="Facebook" primary={true}/>
                 </div>
-
                 <FacebookLogin callback={this.responseFacebook} textButton="Continuar con Facebook"/>
 
             </div>

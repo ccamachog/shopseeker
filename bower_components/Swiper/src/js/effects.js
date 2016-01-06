@@ -1,6 +1,6 @@
 /*=========================
-  Effects
-  ===========================*/
+ Effects
+ ===========================*/
 s.effects = {
     fade: {
         setTranslate: function () {
@@ -15,8 +15,8 @@ s.effects = {
                     tx = 0;
                 }
                 var slideOpacity = s.params.fade.crossFade ?
-                        Math.max(1 - Math.abs(slide[0].progress), 0) :
-                        1 + Math.min(Math.max(slide[0].progress, -1), 0);
+                    Math.max(1 - Math.abs(slide[0].progress), 0) :
+                1 + Math.min(Math.max(slide[0].progress, -1), 0);
                 slide
                     .css({
                         opacity: slideOpacity
@@ -74,19 +74,19 @@ s.effects = {
                 var progress = Math.max(Math.min(slide[0].progress, 1), -1);
                 var tx = 0, ty = 0, tz = 0;
                 if (i % 4 === 0) {
-                    tx = - round * 4 * s.size;
+                    tx = -round * 4 * s.size;
                     tz = 0;
                 }
                 else if ((i - 1) % 4 === 0) {
                     tx = 0;
-                    tz = - round * 4 * s.size;
+                    tz = -round * 4 * s.size;
                 }
                 else if ((i - 2) % 4 === 0) {
                     tx = s.size + round * 4 * s.size;
                     tz = s.size;
                 }
                 else if ((i - 3) % 4 === 0) {
-                    tx = - s.size;
+                    tx = -s.size;
                     tz = 3 * s.size + s.size * 4 * round;
                 }
                 if (s.rtl) {
@@ -155,7 +155,7 @@ s.effects = {
         setTranslate: function () {
             var transform = s.translate;
             var center = isH() ? -transform + s.width / 2 : -transform + s.height / 2;
-            var rotate = isH() ? s.params.coverflow.rotate: -s.params.coverflow.rotate;
+            var rotate = isH() ? s.params.coverflow.rotate : -s.params.coverflow.rotate;
             var translate = s.params.coverflow.depth;
             //Each slide offset from center
             for (var i = 0, length = s.slides.length; i < length; i++) {

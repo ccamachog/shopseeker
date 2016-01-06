@@ -1,6 +1,6 @@
 /*===========================
-Add .swiper plugin from Dom libraries
-===========================*/
+ Add .swiper plugin from Dom libraries
+ ===========================*/
 function addLibraryPlugin(lib) {
     lib.fn.swiper = function (params) {
         var firstInstance;
@@ -17,6 +17,7 @@ if (domLib) {
         domLib.fn.transitionEnd = function (callback) {
             var events = ['webkitTransitionEnd', 'transitionend', 'oTransitionEnd', 'MSTransitionEnd', 'msTransitionEnd'],
                 i, j, dom = this;
+
             function fireCallBack(e) {
                 /*jshint validthis:true */
                 if (e.target !== this) return;
@@ -25,6 +26,7 @@ if (domLib) {
                     dom.off(events[i], fireCallBack);
                 }
             }
+
             if (callback) {
                 for (i = 0; i < events.length; i++) {
                     dom.on(events[i], fireCallBack);

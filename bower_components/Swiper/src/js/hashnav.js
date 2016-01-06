@@ -1,6 +1,6 @@
 /*=========================
-  Hash Navigation
-  ===========================*/
+ Hash Navigation
+ ===========================*/
 s.hashnav = {
     init: function () {
         if (!s.params.hashnav) return;

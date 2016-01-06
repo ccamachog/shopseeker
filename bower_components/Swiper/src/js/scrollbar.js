@@ -1,6 +1,6 @@
 /*=========================
-  Scrollbar
-  ===========================*/
+ Scrollbar
+ ===========================*/
 s.scrollbar = {
     isTouched: false,
     setDragPosition: function (e) {
@@ -9,7 +9,7 @@ s.scrollbar = {
         var translate;
         var pointerPosition = isH() ?
             ((e.type === 'touchstart' || e.type === 'touchmove') ? e.targetTouches[0].pageX : e.pageX || e.clientX) :
-            ((e.type === 'touchstart' || e.type === 'touchmove') ? e.targetTouches[0].pageY : e.pageY || e.clientY) ;
+            ((e.type === 'touchstart' || e.type === 'touchmove') ? e.targetTouches[0].pageY : e.pageY || e.clientY);
         var position = (pointerPosition) - sb.track.offset()[isH() ? 'left' : 'top'] - sb.dragSize / 2;
         var positionMin = -s.minTranslate() * sb.moveDivider;
         var positionMax = -s.maxTranslate() * sb.moveDivider;

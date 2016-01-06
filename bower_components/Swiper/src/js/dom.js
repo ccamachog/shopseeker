@@ -1,6 +1,6 @@
 /*===========================
-Dom7 Library
-===========================*/
+ Dom7 Library
+ ===========================*/
 var Dom7 = (function () {
     var Dom7 = function (arr) {
         var _this = this, i = 0;
@@ -151,7 +151,7 @@ var Dom7 = (function () {
             }
         },
         // Transforms
-        transform : function (transform) {
+        transform: function (transform) {
             for (var i = 0; i < this.length; i++) {
                 var elStyle = this[i].style;
                 elStyle.webkitTransform = elStyle.MsTransform = elStyle.msTransform = elStyle.MozTransform = elStyle.OTransform = elStyle.transform = transform;
@@ -180,6 +180,7 @@ var Dom7 = (function () {
                     }
                 }
             }
+
             var events = eventName.split(' ');
             var i, j;
             for (i = 0; i < this.length; i++) {
@@ -242,6 +243,7 @@ var Dom7 = (function () {
                 listener(e);
                 dom.off(eventName, targetSelector, proxy, capture);
             }
+
             dom.on(eventName, targetSelector, proxy, capture);
         },
         trigger: function (eventName, eventData) {
@@ -262,6 +264,7 @@ var Dom7 = (function () {
         transitionEnd: function (callback) {
             var events = ['webkitTransitionEnd', 'transitionend', 'oTransitionEnd', 'MSTransitionEnd', 'msTransitionEnd'],
                 i, j, dom = this;
+
             function fireCallBack(e) {
                 /*jshint validthis:true */
                 if (e.target !== this) return;
@@ -270,6 +273,7 @@ var Dom7 = (function () {
                     dom.off(events[i], fireCallBack);
                 }
             }
+
             if (callback) {
                 for (i = 0; i < events.length; i++) {
                     dom.on(events[i], fireCallBack);
@@ -327,12 +331,12 @@ var Dom7 = (function () {
                 var el = this[0];
                 var box = el.getBoundingClientRect();
                 var body = document.body;
-                var clientTop  = el.clientTop  || body.clientTop  || 0;
+                var clientTop = el.clientTop || body.clientTop || 0;
                 var clientLeft = el.clientLeft || body.clientLeft || 0;
-                var scrollTop  = window.pageYOffset || el.scrollTop;
+                var scrollTop = window.pageYOffset || el.scrollTop;
                 var scrollLeft = window.pageXOffset || el.scrollLeft;
                 return {
-                    top: box.top  + scrollTop  - clientTop,
+                    top: box.top + scrollTop - clientTop,
                     left: box.left + scrollLeft - clientLeft
                 };
             }
@@ -530,7 +534,7 @@ var Dom7 = (function () {
             while (el.nextElementSibling) {
                 var next = el.nextElementSibling;
                 if (selector) {
-                    if($(next).is(selector)) nextEls.push(next);
+                    if ($(next).is(selector)) nextEls.push(next);
                 }
                 else nextEls.push(next);
                 el = next;
@@ -557,7 +561,7 @@ var Dom7 = (function () {
             while (el.previousElementSibling) {
                 var prev = el.previousElementSibling;
                 if (selector) {
-                    if($(prev).is(selector)) prevEls.push(prev);
+                    if ($(prev).is(selector)) prevEls.push(prev);
                 }
                 else prevEls.push(prev);
                 el = prev;
@@ -592,7 +596,7 @@ var Dom7 = (function () {
             }
             return $($.unique(parents));
         },
-        find : function (selector) {
+        find: function (selector) {
             var foundElements = [];
             for (var i = 0; i < this.length; i++) {
                 var found = this[i].querySelectorAll(selector);

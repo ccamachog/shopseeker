@@ -1,11 +1,23 @@
-export default function statusAppReducer(state = new StatusAppRecord(), action = '') {
+import {SET_STATUS_MENU} from '../actions/TagAction.js';
+import TagRecord from '../types/TagRecord.js';
+import {List} from 'immutable';
+
+export default function tagReducer(state = new List(), action = '') {
     switch (action.type) {
-        case SET_STATUS_MENU:
+        case GET_TAG_LIST:
         {
-            if (state.get('isMenuOpen') === action.open) {
+            if (state.size() > 0) {
                 return state;
             } else {
-                return state.set('isMenuOpen', action.open);
+                return state.push(new TagRecord({
+                    id: 1,
+                    name: 'Comer y Beber',
+                    className: 'foodTag'
+                })).push({
+                    id: 2,
+                    name: 'Salud y Belleza',
+                    className: 'healthyTag'
+                });
             }
         }
         default:

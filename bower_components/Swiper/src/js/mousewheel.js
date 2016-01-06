@@ -1,6 +1,6 @@
 /*=========================
-  Mousewheel Control
-  ===========================*/
+ Mousewheel Control
+ ===========================*/
 s.mousewheel = {
     event: false,
     lastScrollTime: (new window.Date()).getTime()
@@ -9,7 +9,8 @@ if (s.params.mousewheelControl) {
     try {
         new window.WheelEvent('wheel');
         s.mousewheel.event = 'wheel';
-    } catch (e) {}
+    } catch (e) {
+    }
 
     if (!s.mousewheel.event && document.onmousewheel !== undefined) {
         s.mousewheel.event = 'mousewheel';
@@ -38,7 +39,7 @@ function handleMousewheel(e) {
             }
         }
         else {
-            delta = Math.abs(e.wheelDeltaX) > Math.abs(e.wheelDeltaY) ? - e.wheelDeltaX * rtlFactor : - e.wheelDeltaY;
+            delta = Math.abs(e.wheelDeltaX) > Math.abs(e.wheelDeltaY) ? -e.wheelDeltaX * rtlFactor : -e.wheelDeltaY;
         }
     }
     //Old FireFox
@@ -56,7 +57,7 @@ function handleMousewheel(e) {
             }
         }
         else {
-            delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? - e.deltaX * rtlFactor : - e.deltaY;
+            delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? -e.deltaX * rtlFactor : -e.deltaY;
         }
     }
     if (delta === 0) return;
