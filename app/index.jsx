@@ -20,7 +20,7 @@ function main() {
 
     ReactDOM.render(
         <Provider store={store}>
-            <div style={{width:'360px'}}>
+            <div >
                 <AppRouter />
             </div>
         </Provider>

@@ -30,6 +30,9 @@ export default class HubScreen extends React.Component {
     }
 
     handleChange = (value) => {
+        if (isNaN(value)){
+            return;
+        }
         this.setState({
             slideIndex: value
         });

@@ -15,7 +15,8 @@ export default class FilterScreen extends React.Component {
         super(props);
     }
 
-    handleChange = (value) => {
+    handleChange = (event) => {
+
 
     };
     render() {
@@ -23,14 +24,14 @@ export default class FilterScreen extends React.Component {
             <div className="shopup-filter-screen">
                 <List subheader="Categorias">
                     <ListItem
-                        leftCheckbox={<Checkbox />}
-                        primaryText="Salud y Belleza"/>
+                        leftCheckbox={<Checkbox onCheck={this.handleChange}/>}
+                        primaryText="Salud y Belleza" disabled={false}/>
                     <ListItem
                         leftCheckbox={<Checkbox />}
-                        primaryText="Comer y Beber"/>
+                        primaryText="Comer y Beber" disabled={false}/>
                     <ListItem
                         leftCheckbox={<Checkbox />}
-                        primaryText="Ocio y deporte"/>
+                        primaryText="Ocio y deporte" disabled={false}/>
                 </List>
                 <Divider />
 
