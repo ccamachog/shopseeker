@@ -1,0 +1,22 @@
+.shopup-filter-screen {
+  .titleCategory {
+    did-flip: true;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 48px;
+    padding-left: 16px;
+  }
+  .slider {
+    width: 80%;
+    padding: 16px;
+    display: inline-block;
+  }
+  .slider > div {
+    height: 0px !important;
+    margin: 0px !important;
+  }
+  .slider-text {
+    width: 10% !important;
+  }
+}

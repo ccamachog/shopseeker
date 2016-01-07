@@ -1,10 +1,12 @@
 import React from 'react';
-
+import OfferDataForm from '../common/offer-data-form/OfferDataForm';
 
 export default class OfferScreen extends React.Component {
     render() {
         return (
-            <h1>Offer Screen</h1>
+            <div>
+                <OfferDataForm/>
+            </div>
         );
     }
 }

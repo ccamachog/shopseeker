@@ -55,9 +55,9 @@ var common = {
     plugins: [
 
         new HtmlwebpackPlugin({
-            title: 'Custom template'
-            //template: PATHS.app+'/main_template.html' // Load a custom template
-            //inject: 'body' // Inject all scripts into the body
+            title: 'ShopUp!',
+            template: PATHS.app + '/template.html', // Load a custom template
+            inject: 'body' // Inject all scripts into the body
         })
 
     ]
