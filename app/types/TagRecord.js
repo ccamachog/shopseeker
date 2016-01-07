@@ -1,9 +1,10 @@
-import {Record} from 'immutable';
-
-let Tag = Record({
+import { Record} from 'immutable';
+let TagRecord = Record({
     id: -1,
     name: '',
     color: '',
-    img:''
+    img:'',
+    selected: false
 });
-export default Tag;
+
+export default TagRecord;
