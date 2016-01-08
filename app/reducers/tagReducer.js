@@ -1,4 +1,4 @@
-import {SET_STATUS_MENU} from '../actions/TagAction.js';
+import {GET_TAG_LIST} from '../actions/TagAction.js';
 import TagRecord from '../types/TagRecord.js';
 import {List} from 'immutable';
 

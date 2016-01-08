@@ -1,8 +1,8 @@
 import React from 'react';
-import Carousel from '../common/carousel/Carousel';
+import Carousel from '../../common/carousel/Carousel';
 import RaisedButton from 'material-ui/lib/raised-button';
 import FontIcon from 'material-ui/lib/font-icon';
-import FacebookLogin from '../common/facebook-login/FacebookLogin';
+import FacebookLogin from '../../common/facebook-login/FacebookLogin';
 import Paper from 'material-ui/lib/paper';
 import './loginScreen.scss';
 

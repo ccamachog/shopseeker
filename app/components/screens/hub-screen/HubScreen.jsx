@@ -3,9 +3,9 @@ import AppBar from 'material-ui/lib/app-bar';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 //import SwipeableViews from 'react-swipeable-views';
-import Map from '../common/map/Map';
+import Map from '../../common/map/Map';
 import OfferListScreen from '../offer-list-screen/OfferListScreen';
-import FilterScreen from '../filter-screen/FilterScreen';
+import FilterScreen from './FilterScreen';
 
 
 const styles = {

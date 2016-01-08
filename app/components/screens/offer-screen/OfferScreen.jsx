@@ -1,5 +1,5 @@
 import React from 'react';
-import OfferDataForm from '../common/offer-data-form/OfferDataForm';
+import OfferDataForm from '../../common/offer-data-form/OfferDataForm';
 
 export default class OfferScreen extends React.Component {
     render() {
