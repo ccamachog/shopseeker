@@ -64,13 +64,17 @@ tags = tags.push(
     })
 );
 
-export default function TagsReducer(state = tags, action = '') {
+export default function TagsReducer(state = new List(), action = '') {
+    debugger;
+    if (state.size <= 0)
+        return tags;
+
     switch (action.type) {
         case SELECT_TAG:
         {
             let tagIndex = state.findIndex(tag=>tag.id==action.id);
             if(tagIndex !== -1){
-                return state.update(index, (tag) => tag.set('selected', true));
+                return state.update(tagIndex, (tag) => tag.set('selected', true));
             }else{
                 return state;
             }
@@ -79,7 +83,7 @@ export default function TagsReducer(state = tags, action = '') {
         {
             let tagIndex = state.findIndex(tag=>tag.id==action.id);
             if(tagIndex !== -1){
-                return state.update(index, (tag) => tag.set('selected', false));
+                return state.update(tagIndex, (tag) => tag.set('selected', false));
             }else{
                 return state;
             }

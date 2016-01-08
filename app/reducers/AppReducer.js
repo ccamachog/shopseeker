@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import statusApp from './statusAppReducer';
-import tags from './TagsReducer';
+import tags from './tagsReducer';
 const todoApp = combineReducers({
     statusApp,
     tags

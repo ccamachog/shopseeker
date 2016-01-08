@@ -27,7 +27,7 @@ class Header extends React.Component {
     requestChange = (open) => {
         let action = setStatusMenu(open);
         this.props.dispatch(action);
-    }
+    };
 }
 function select(state) {
     return {

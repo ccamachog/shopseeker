@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import {selectTag as selectTagAct, deselectTag as deselectTagAct} from '../../../actions/TagsAction';
+
 
 import Checkbox from 'material-ui/lib/checkbox';
 import GridTile from 'material-ui/lib/grid-list/grid-tile';
@@ -13,9 +12,6 @@ export default class ImgTag extends React.Component {
         super(props);
 
         const id = props.tag.id;
-
-        //this.select = this.select.bind(this, id);
-        //this.deselect = this.deselect.bind(this, id);
     }
 
     render() {
@@ -31,21 +27,21 @@ export default class ImgTag extends React.Component {
                 title={tag.name}
                 titleBackground={tag.color}
                 style={{backgroundColor: tag.color}}
-                onClick={tag.selected?this.selectTag.bind(this, tag.id):this.deselectTag.bind(this, tag.id)}
+                onClick={tag.selected?this.deselectTag:this.selectTag}
             >
                 <img src={tag.img}/>
             </GridTile>
         );
-    }
+    };
 
-    selectTag(id) {
-        this.props.dispatch(selectTagAct(id));
-    }
+    selectTag = () => {
+        this.props.selectTag(this.props.tag.id);
+    };
 
-    deselectTag(id) {
-        this.props.dispatch(deselectTagAct(id));
-    }
+    deselectTag = () => {
+        this.props.deselectTag(this.props.tag.id);
+    };
+
+
 }
 
-// Wrap the component to inject dispatch and state into it
-export default connect()(ImgTag)
