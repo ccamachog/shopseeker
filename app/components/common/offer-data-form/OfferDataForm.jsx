@@ -19,8 +19,8 @@ export default class OfferDataForm extends React.Component {
     render() {
         return (
             <div className="shopup-offer-data-form">
-                <AppBar title="Nueva Oferta" iconClassNameRight="material-icons icon-more_vert"
-                        iconClassNameLeft="material-icons icon-arrow-back"/>
+                {/*<AppBar title="Nueva Oferta" iconClassNameRight="material-icons icon-more_vert"
+                        iconClassNameLeft="material-icons icon-arrow-back"/>*/}
 
                 <div className="shopup-add-offer">
                     <div>

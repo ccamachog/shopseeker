@@ -6,6 +6,8 @@ import Tab from 'material-ui/lib/tabs/tab';
 import Map from '../../common/map/Map';
 import OfferListScreen from '../offer-list-screen/OfferListScreen';
 import FilterScreen from './FilterScreen';
+import {setHeaderState} from '../../../actions/HeaderStateAction';
+import { connect } from 'react-redux';
 
 
 const styles = {
@@ -19,16 +21,40 @@ const styles = {
         padding: 0
     }
 };
-export default class HubScreen extends React.Component {
+const TABS_ENUM ={
+    LIST:0,
+    MAP:1
+}
+class HubScreen extends React.Component {
 
 
     constructor(props) {
         super(props);
         this.state = {
-            slideIndex: 1
+            slideIndex: TABS_ENUM.LIST
         };
-    }
+        this.configStatusBar(this.state.slideIndex);
 
+    }
+    render() {
+        return (
+            <div style={{width:'100%',height:'320px'}}>
+                <div style={{marginTop: '64px'}}>
+                    <Tabs onChange={this.handleChange} value={this.state.slideIndex}>
+                        {/*<Tab label="Filtrar" value={0}>
+                            <FilterScreen/>
+                        </Tab>*/}
+                        <Tab label="Ofertas" value={TABS_ENUM.LIST}>
+                            <OfferListScreen />
+                        </Tab>
+                        <Tab label="Map" value={TABS_ENUM.MAP}>
+                            <Map/>
+                        </Tab>
+                    </Tabs>
+                </div>
+            </div>
+        );
+    }
     handleChange = (value) => {
         if (isNaN(value)){
             return;
@@ -36,48 +62,32 @@ export default class HubScreen extends React.Component {
         this.setState({
             slideIndex: value
         });
+        this.configStatusBar(value)
     };
-    render() {
-        return (
-            <div style={{width:'100%',height:'320px'}}>
+    configStatusBar = (tabIndex) =>{
+        let action,headerInfo;
+        debugger;
+        switch(tabIndex){
+            case TABS_ENUM.LIST:
+                headerInfo={
+                    title:'List',
+                    rightIconClass:'icon-search',
+                    rightIconTouchHandler:()=>alert('hola')
+                };
+                action = setHeaderState(headerInfo);
+                break;
+            case TABS_ENUM.MAP:
+                action = setHeaderState({title:'Map'});
+                break;
+        };
 
-                <div style={{position: 'fixed',zIndex: 1000,width: '100%',top:0,left:0}}>
-                    <AppBar title="40 de  636 Ofertas" iconClassNameRight="material-icons icon-search"
-                            iconClassNameLeft="material-icons icon-arrow-back"/>
-                </div>
-                <div style={{    marginTop: '64px'}}>
-                    <Tabs onChange={this.handleChange} value={this.state.slideIndex}>
-                        <Tab label="Filtrar" value={0}>
-                            <FilterScreen/>
-                        </Tab>
-                        <Tab label="Ofertas" value={1}>
-                            <OfferListScreen />
-                        </Tab>
-                        <Tab label="Map" value={2}>
-                            <Map/>
-                        </Tab>
-                    </Tabs>
-                </div>
+        this.props.dispatch(action);
+    };
 
-            </div>
-        );
+}
+
+function select(state) {
+    return {
     }
 }
-/*
- <div style={{paddingTop:'112px'}}>
- <SwipeableViews
- index={this.state.slideIndex}
- onChangeIndex={this.handleChange}
- >
- <div>
- <OfferListScreen/>
- </div>
- <div style={styles.slide}>
- <Map/>
- </div>
- <div style={styles.slide}>
- <FilterScreen/>
- </div>
- </SwipeableViews>
- </div>
- */
+export default connect(select)(HubScreen)

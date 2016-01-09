@@ -18,3 +18,8 @@
     content: "more_vert";
 }
 
+.icon-menu:before {
+    content: "menu";
+}
+
+
