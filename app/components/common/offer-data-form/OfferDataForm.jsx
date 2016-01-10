@@ -8,7 +8,6 @@ import FontIcon from 'material-ui/lib/font-icon';
 import TextField from 'material-ui/lib/text-field';
 import FlatButton from 'material-ui/lib/flat-button';
 import Dialog from 'material-ui/lib/dialog';
-import AppBar from 'material-ui/lib/app-bar';
 import './offerDataForm.scss';
 
 export default class OfferDataForm extends React.Component {
@@ -19,8 +18,6 @@ export default class OfferDataForm extends React.Component {
     render() {
         return (
             <div className="shopup-offer-data-form">
-                {/*<AppBar title="Nueva Oferta" iconClassNameRight="material-icons icon-more_vert"
-                        iconClassNameLeft="material-icons icon-arrow-back"/>*/}
 
                 <div className="shopup-add-offer">
                     <div>
