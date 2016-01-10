@@ -65,7 +65,7 @@ tags = tags.push(
 );
 
 export default function TagsReducer(state = new List(), action = '') {
-    debugger;
+
     if (state.size <= 0)
         return tags;
 

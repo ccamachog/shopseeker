@@ -31,7 +31,8 @@ class HubScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            slideIndex: TABS_ENUM.LIST
+            slideIndex: TABS_ENUM.LIST,
+            showFilterScreen: true
         };
         this.configStatusBar(this.state.slideIndex);
 
@@ -39,7 +40,9 @@ class HubScreen extends React.Component {
     render() {
         return (
             <div style={{width:'100%',height:'320px'}}>
+
                 <div style={{marginTop: '64px'}}>
+                    {this.state.showFilterScreen?<h1>Hola</h1>:null}
                     <Tabs onChange={this.handleChange} value={this.state.slideIndex}>
                         {/*<Tab label="Filtrar" value={0}>
                             <FilterScreen/>
@@ -66,7 +69,6 @@ class HubScreen extends React.Component {
     };
     configStatusBar = (tabIndex) =>{
         let action,headerInfo;
-        debugger;
         switch(tabIndex){
             case TABS_ENUM.LIST:
                 headerInfo={

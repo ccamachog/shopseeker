@@ -33,7 +33,6 @@ class Header extends React.Component {
     };
 }
 function select(state) {
-    debugger;
     return {
         title: state.header.title,
         isSideMenuOpen: state.header.isSideMenuOpen,
