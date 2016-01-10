@@ -1,6 +1,6 @@
 import {Record} from 'immutable';
 import {List} from 'immutable';
-import PriceRangeRecord from 'PriceRangeRecord';
+import PriceRangeRecord from './PriceRangeRecord';
 let OfferRecord = Record({
     id: -1,
     title: '',
