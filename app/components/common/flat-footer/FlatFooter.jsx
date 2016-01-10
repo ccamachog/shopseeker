@@ -8,10 +8,10 @@ export default class FlatFooter extends React.Component {
             <div className="float-footer">
                 <Toolbar>
                     <ToolbarGroup firstChild={true} float="left">
-                        <FlatButton label="Left button" onTouchTap=""/>
+                        <FlatButton label="Left button" onTouchTap={function(){}}/>
                     </ToolbarGroup>
                     <ToolbarGroup lastChild={true} >
-                        <FlatButton label="Right button" onTouchTap=""/>
+                        <FlatButton label="Right button" onTouchTap={function(){}}/>
                     </ToolbarGroup>
                 </Toolbar>
             </div>

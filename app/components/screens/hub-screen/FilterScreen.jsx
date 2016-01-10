@@ -60,12 +60,3 @@ export default class FilterScreen extends React.Component {
         );
     }
 }
-/*
- <List subheader="General">
- <ListItem
- primaryText="Profile photo"
- secondaryText="Change your Google+ profile photo" />
- <ListItem
- primaryText="Show your status"
- secondaryText="Your status is visible to everyone you use with" />
- </List>*/

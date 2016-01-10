@@ -9,18 +9,21 @@ import TextField from 'material-ui/lib/text-field';
 import FlatButton from 'material-ui/lib/flat-button';
 import Dialog from 'material-ui/lib/dialog';
 import AppBar from 'material-ui/lib/app-bar';
-import './offerDataForm.scss';
+import './OfferScreen'
+import {setHeaderState} from '../../../actions/HeaderStateAction';
+import { connect } from 'react-redux';
 
-export default class OfferDataForm extends React.Component {
+class OfferScreen extends React.Component {
     constructor(props) {
         super(props);
+        this.configStatusBar();
     }
 
     render() {
         return (
             <div className="shopup-offer-data-form">
                 {/*<AppBar title="Nueva Oferta" iconClassNameRight="material-icons icon-more_vert"
-                        iconClassNameLeft="material-icons icon-arrow-back"/>*/}
+                 iconClassNameLeft="material-icons icon-arrow-back"/>*/}
 
                 <div className="shopup-add-offer">
                     <div>
@@ -42,4 +45,18 @@ export default class OfferDataForm extends React.Component {
             </div>
         )
     }
+    configStatusBar = () =>{
+        let action,headerInfo;
+        headerInfo={
+            title:'Añadir Oferta'
+        };
+        action = setHeaderState(headerInfo);
+        this.props.dispatch(action);
+    };
 }
+function select(state) {
+    return {
+
+    }
+}
+export default connect(select)(OfferScreen)

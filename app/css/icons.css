@@ -17,9 +17,11 @@
 .icon-more_vert:before {
     content: "more_vert";
 }
-
-.icon-tag:before{
+.icon-tag:before {
     content: "label_outline";
+}
+.icon-menu:before {
+    content: "menu";
 }
 
 

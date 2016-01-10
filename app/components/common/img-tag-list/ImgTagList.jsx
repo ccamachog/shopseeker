@@ -12,7 +12,7 @@ export default class ImgTagList extends React.Component {
                     style={{width: 360, height: 640, overflowY: 'auto'}}
                 >
                     {
-                        tags.map(tile => <ImgTag tag={tile}/>)
+                        tags.map(tile => <ImgTag key={tile.id} tag={tile} selectTag={this.props.selectTag} deselectTag={this.props.deselectTag} />)
                     }
                 </GridList>
         );
