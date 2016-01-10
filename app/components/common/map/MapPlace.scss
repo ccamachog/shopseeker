@@ -1,18 +1,43 @@
-$K_WIDTH: 40;
-$K_HEIGHT: 40;
-.shopup-map-place {
-  position: absolute;
+$K_WIDTH: 30;
+$K_HEIGHT: 30;
+
+.shopup-map-place-circle{
+  display: table;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: $K_HEIGHT+px;
+  background-color: #ff4081;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 2px;
   width: $K_WIDTH+px;
   height: $K_HEIGHT+px;
+  cursor: pointer;
+}
+
+.shopup-map-place-container{
+  position: absolute;
   left: -$K_WIDTH / 2 +px;
   top: -$K_HEIGHT / 2 +px;
 
-  border: 5px solid #f44336;
-  border-radius: $K_HEIGHT+px;
-  background-color: white;
-  text-align: center;
-  color: #3f51b5;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 4px;
+}
+
+.shopup-map-place-content{
+  display: table-cell;
+  vertical-align: middle;
+  color: white;
+}
+
+
+$MPOC_WIDTH: 300;
+$MPOC_HEIGHT: 50;
+
+.shopup-map-place-offer-card-container{
+  background-color: red;
+  width: $MPOC_WIDTH + px;
+  height: $MPOC_HEIGHT + px;
+  display: block;
+  position: absolute;
+  top: -($MPOC_HEIGHT - 5)+px;
+  left: $K_WIDTH+px
 }

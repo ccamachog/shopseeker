@@ -18,3 +18,8 @@
     content: "more_vert";
 }
 
+.icon-tag:before{
+    content: "label_outline";
+}
+
+
