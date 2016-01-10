@@ -24,12 +24,12 @@ export default class MapPlace extends React.Component {
         this.setState({
             render:true
         })
-    }
+    };
     handleCloseMapPlaceOffer = (value) => {
         this.setState({
             render:false
         })
-    }
+    };
     render() {
         return (
             <div className="shopup-map-place-container">
