@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, Link } from 'react-router';
+import { Router, Route, Link, IndexRoute } from 'react-router';
 import LoginScreen from '../screens/login-screen/LoginScreen';
 import HubScreen from '../screens/hub-screen/HubScreen';
 import OfferScreen from '../screens/offer-screen/OfferScreen';
@@ -11,13 +11,19 @@ export default class AppRouter extends React.Component {
     render() {
         return (
             <Router>
+                <Route path="/login" component={LoginScreen}/>
                 <Route path="/" component={Header}>
-                    <Route path="/hub" component={HubScreen}/>
-                    <Route path="/offer" component={OfferScreen}/>
+                    <IndexRoute onEnter={this.redirectLogin}/>
+                    <Route path="hub" component={HubScreen}/>
+                    <Route path="offer" component={OfferScreen}/>
+                    <Route path="tags" component={TagsScreen}/>
                 </Route>
-                <Route path="/tags" component={TagsScreen}/>
             </Router>
         );
 
+    }
+
+    redirectLogin() {
+        window.location.replace('/#/login');
     }
 }

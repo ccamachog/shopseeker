@@ -21,7 +21,8 @@ class Header extends React.Component {
                             />
                 </div>
                 <SideNav open={this.props.isSideMenuOpen} onRequestChange={this.requestChange}/>
-                <div>
+
+                <div style={{marginTop: '64px'}}>
                     {this.props.children}
                 </div>
             </div>

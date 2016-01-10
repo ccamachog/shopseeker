@@ -24,7 +24,7 @@ const styles = {
 const TABS_ENUM ={
     LIST:0,
     MAP:1
-}
+};
 class HubScreen extends React.Component {
     constructor(props) {
         super(props);
@@ -38,9 +38,7 @@ class HubScreen extends React.Component {
     render() {
         return (
             <div style={{width:'100%',height:'320px'}}>
-                <div style={{marginTop: '64px'}}>
-                    {this.state.showFilterScreen?<FilterScreen/>:this.paintTabs()}
-                </div>
+                {this.state.showFilterScreen ? <FilterScreen/> : this.paintTabs()}
             </div>
         );
     }
@@ -78,7 +76,8 @@ class HubScreen extends React.Component {
         });
         this.configStatusBarForTabs();
     }
-    configStatusBarForTabs = (tabIndex) =>{
+
+    configStatusBarForTabs = () => {
         let action,
         headerInfo={
             title:'List',
@@ -88,7 +87,7 @@ class HubScreen extends React.Component {
         action = setHeaderState(headerInfo);
         this.props.dispatch(action);
     };
-    configStatusBarForFilter = (tabIndex) =>{
+    configStatusBarForFilter = () => {
         let action,
             headerInfo={
                 title:'Filter',
@@ -107,7 +106,7 @@ class HubScreen extends React.Component {
             case TABS_ENUM.MAP:
                 headerInfo.title = 'Map';
                 break;
-        };
+        }
         action = setHeaderState(headerInfo,false);
         this.props.dispatch(action);
     };
