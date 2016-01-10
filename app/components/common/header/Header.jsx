@@ -14,10 +14,11 @@ class Header extends React.Component {
                 {/*<AppBar title={_title} iconClassNameRight="material-icons icon-search"
                         onLeftIconButtonTouchTap={this.onClickMenu}/>*/}
                 <div style={{position: 'fixed',zIndex: 1000,width: '100%',top:0,left:0}}>
-                    <AppBar title={this.props.title} iconClassNameRight={'material-icons '+ this.props.rightIconClass}
-                            iconClassNameLeft={'material-icons icon-menu'}
-                            onLeftIconButtonTouchTap={this.onLeftIconButtonTouchTap||this.requestChange.bind(this,true)}
-                            onRightIconButtonTouchTap={this.props.rightIconTouchHandler}/>
+                    <AppBar title={this.props.title} iconClassNameRight={this.props.rightIconClass}
+                            onRightIconButtonTouchTap={this.props.rightIconTouchHandler}
+                            iconClassNameLeft={this.props.leftIconClass || 'material-icons icon-menu'}
+                            onLeftIconButtonTouchTap={this.props.leftIconTouchHandler || this.requestChange.bind(this,true)}
+                            />
                 </div>
                 <SideNav open={this.props.isSideMenuOpen} onRequestChange={this.requestChange}/>
                 <div>
@@ -28,7 +29,7 @@ class Header extends React.Component {
     }
 
     requestChange = (isSideMenuOpen) => {
-        const action = setHeaderState({isSideMenuOpen});
+        const action = setHeaderState({isSideMenuOpen},false);
         this.props.dispatch(action);
     };
 }
@@ -37,7 +38,9 @@ function select(state) {
         title: state.header.title,
         isSideMenuOpen: state.header.isSideMenuOpen,
         rightIconClass: state.header.rightIconClass,
-        rightIconTouchHandler: state.header.rightIconTouchHandler
+        rightIconTouchHandler: state.header.rightIconTouchHandler,
+        leftIconClass: state.header.leftIconClass,
+        leftIconTouchHandler: state.header.leftIconTouchHandler
 
     }
 }

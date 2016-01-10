@@ -26,38 +26,36 @@ const TABS_ENUM ={
     MAP:1
 }
 class HubScreen extends React.Component {
-
-
     constructor(props) {
         super(props);
         this.state = {
             slideIndex: TABS_ENUM.LIST,
-            showFilterScreen: true
+            showFilterScreen: false
         };
-        this.configStatusBar(this.state.slideIndex);
+        this.configStatusBarForTabs();
 
     }
     render() {
         return (
             <div style={{width:'100%',height:'320px'}}>
-
                 <div style={{marginTop: '64px'}}>
-                    {this.state.showFilterScreen?<h1>Hola</h1>:null}
-                    <Tabs onChange={this.handleChange} value={this.state.slideIndex}>
-                        {/*<Tab label="Filtrar" value={0}>
-                            <FilterScreen/>
-                        </Tab>*/}
-                        <Tab label="Ofertas" value={TABS_ENUM.LIST}>
-                            <OfferListScreen />
-                        </Tab>
-                        <Tab label="Map" value={TABS_ENUM.MAP}>
-                            <Map/>
-                        </Tab>
-                    </Tabs>
+                    {this.state.showFilterScreen?<FilterScreen/>:this.paintTabs()}
                 </div>
             </div>
         );
     }
+    paintTabs = () => {
+        return (
+            <Tabs onChange={this.handleChange} value={this.state.slideIndex}>
+                <Tab label="Ofertas" value={TABS_ENUM.LIST}>
+                    <OfferListScreen />
+                </Tab>
+                <Tab label="Map" value={TABS_ENUM.MAP}>
+                    <Map/>
+                </Tab>
+            </Tabs>
+        );
+    };
     handleChange = (value) => {
         if (isNaN(value)){
             return;
@@ -65,24 +63,52 @@ class HubScreen extends React.Component {
         this.setState({
             slideIndex: value
         });
-        this.configStatusBar(value)
+        this.setStatusBarTitle(value);
     };
-    configStatusBar = (tabIndex) =>{
-        let action,headerInfo;
+    showFilterScreen(){
+        this.setState({
+            showFilterScreen: true
+        });
+        this.configStatusBarForFilter();
+
+    }
+    showTabScreen(){
+        this.setState({
+            showFilterScreen: false
+        });
+        this.configStatusBarForTabs();
+    }
+    configStatusBarForTabs = (tabIndex) =>{
+        let action,
+        headerInfo={
+            title:'List',
+            rightIconClass:'material-icons icon-search',
+            rightIconTouchHandler:this.showFilterScreen.bind(this)
+        };
+        action = setHeaderState(headerInfo);
+        this.props.dispatch(action);
+    };
+    configStatusBarForFilter = (tabIndex) =>{
+        let action,
+            headerInfo={
+                title:'Filter',
+                leftIconClass:'material-icons icon-arrow-back',
+                leftIconTouchHandler:this.showTabScreen.bind(this)
+            };
+        action = setHeaderState(headerInfo);
+        this.props.dispatch(action);
+    };
+    setStatusBarTitle = (tabIndex) =>{
+        let action,headerInfo={};
         switch(tabIndex){
             case TABS_ENUM.LIST:
-                headerInfo={
-                    title:'List',
-                    rightIconClass:'icon-search',
-                    rightIconTouchHandler:()=>alert('hola')
-                };
-                action = setHeaderState(headerInfo);
+                headerInfo.title = 'List';
                 break;
             case TABS_ENUM.MAP:
-                action = setHeaderState({title:'Map'});
+                headerInfo.title = 'Map';
                 break;
         };
-
+        action = setHeaderState(headerInfo,false);
         this.props.dispatch(action);
     };
 

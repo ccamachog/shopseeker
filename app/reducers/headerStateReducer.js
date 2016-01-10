@@ -7,7 +7,7 @@ let HeaderStateRecord = Record({
     rightIconClass:'',
     rightIconTouchHandler:null,
     leftIconClass:'',
-    leftIconTouchHanlder:null
+    leftIconTouchHandler:null
 });
 
 
@@ -16,7 +16,9 @@ export default function statusAppReducer(state = new HeaderStateRecord(), action
         case SET_HEADER_STATE:
         {
             const headerInfo = action.headerInfo;
-            let newState=state;
+            const resetHeader = action.resetHeader;
+            let newState=resetHeader?new HeaderStateRecord():state;
+
             if (headerInfo.isSideMenuOpen != undefined && (state.get('isSideMenuOpen') !== headerInfo.isSideMenuOpen)) {
                 newState = newState.set('isSideMenuOpen',headerInfo.isSideMenuOpen);
             }
@@ -28,6 +30,15 @@ export default function statusAppReducer(state = new HeaderStateRecord(), action
             }
             if (headerInfo.rightIconTouchHandler != undefined && (state.get('rightIconTouchHandler') !== headerInfo.rightIconTouchHandler)) {
                 newState = newState.set('rightIconTouchHandler',headerInfo.rightIconTouchHandler);
+            }
+            if (headerInfo.rightIconClass != undefined && (state.get('rightIconClass') !== headerInfo.rightIconClass)) {
+                newState = newState.set('rightIconClass',headerInfo.rightIconClass);
+            }
+            if (headerInfo.leftIconClass != undefined && (state.get('leftIconClass') !== headerInfo.leftIconClass)) {
+                newState = newState.set('leftIconClass',headerInfo.leftIconClass);
+            }
+            if (headerInfo.leftIconTouchHandler != undefined && (state.get('leftIconTouchHandler') !== headerInfo.leftIconTouchHandler)) {
+                newState = newState.set('leftIconTouchHandler',headerInfo.leftIconTouchHandler);
             }
 
             return newState;
