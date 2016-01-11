@@ -9,6 +9,7 @@ let OfferRecord = Record({
     price: new PriceRangeRecord(),
     tags: new List(),
     user: -1,
-    rating: -1
+    rating: -1,
+    favorite: false
 });
 export default OfferRecord;
