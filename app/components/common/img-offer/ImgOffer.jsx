@@ -56,11 +56,13 @@ export default class ImgOffer extends React.Component {
         this.props.showOffer(this.props.offer.id);
     };
 
-    favoriteOffer = () => {
+    favoriteOffer = (e) => {
+        e.stopPropagation();
         this.props.favoriteOffer(this.props.offer.id);
     };
 
-    unfavoriteOffer = () => {
+    unfavoriteOffer = (e) => {
+        e.stopPropagation();
         this.props.unfavoriteOffer(this.props.offer.id);
     };
 }
