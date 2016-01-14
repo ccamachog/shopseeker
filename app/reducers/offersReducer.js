@@ -14,7 +14,7 @@ offers = offers.push(
         price: new PriceRangeRecord({min: 0, max: 100}),
         tags: new List(),
         user: 1,
-        rating: 3,
+        rating: 4,
         favorite: false
     }),
     new OfferRecord({
@@ -35,7 +35,7 @@ offers = offers.push(
         photos: new List(),
         price: new PriceRangeRecord({min: 0, max: 0}),
         tags: new List(),
-        user: 1,
+        user: 2,
         rating: 3,
         favorite: true
     }),
@@ -46,7 +46,7 @@ offers = offers.push(
         photos: new List(),
         price: new PriceRangeRecord({min: 0, max: 100}),
         tags: new List(),
-        user: 1,
+        user: 3,
         rating: 3,
         favorite: false
     })
