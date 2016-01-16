@@ -1,0 +1,45 @@
+.shopup-filter-screen {
+  .titleCategory {
+    did-flip: true;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 11px;
+  }
+  .slider {
+    width: 80%;
+    padding: 16px;
+    display: inline-block;
+  }
+  .slider > div {
+    height: 0px !important;
+    margin: 0px !important;
+  }
+  .slider-text {
+    width: 10% !important;
+  }
+  .filter-region{
+    padding:20px;
+      .paper{
+        height: 100%;
+        width: 100%;
+        padding: 0px 20px 20px 20px;
+        overflow:hidden;
+      }
+  }
+  .filterRadioGroup{
+
+    .filterRadio{
+      padding:16px;
+    }
+  }
+  .filterCheck{
+    padding:16px;
+  }
+  .execute-filter-btn{
+    position:fixed;
+    right: 25px;
+    bottom: 20px;
+    z-index: 2;
+  }
+}

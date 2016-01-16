@@ -1,14 +1,13 @@
 import {Record} from 'immutable';
-import {List} from 'immutable';
-import PriceRangeRecord from 'PriceRangeRecord';
-let OfferRecord = Record({
-    id: -1,
-    tags: new List(),
-    distance: '',
+import {Set} from 'immutable';
+import PriceRangeRecord from './PriceRangeRecord';
+import LocationRecord from './LocationRecord';
+const FilterRecord = Record({
+    tags: new Set(),
+    distance: -1,
     date: -1,
     price: new PriceRangeRecord(),
     rating: -1,
-    filter_text: ''
-
+    location: null
 });
-export default OfferRecord;
+export default FilterRecord;

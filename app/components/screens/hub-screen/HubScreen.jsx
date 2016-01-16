@@ -5,7 +5,7 @@ import Tab from 'material-ui/lib/tabs/tab';
 //import SwipeableViews from 'react-swipeable-views';
 import Map from '../../common/map/Map';
 import OfferListScreen from '../offer-list-screen/OfferListScreen';
-import FilterScreen from './FilterScreen';
+import FilterScreen from '../filter-screen/FilterScreen';
 import {setHeaderState} from '../../../actions/HeaderStateAction';
 import { connect } from 'react-redux';
 

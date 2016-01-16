@@ -6,6 +6,7 @@ import Divider from 'material-ui/lib/divider';
 import Avatar from 'material-ui/lib/avatar';
 import styles from 'material-ui/lib/styles';
 import FileFolder from 'material-ui/lib/svg-icons/file/folder';
+import {Link} from 'react-router'
 import './SideNav.scss';
 
 const colors = styles.Colors;
@@ -37,7 +38,7 @@ export default class SideNav extends React.Component {
                     <div className="user-name">Nombre Usuario</div>
                     <Divider/>
                     <List>
-                        <ListItem>Mis Ofertas</ListItem>
+                        <ListItem><Link to="/hub">Mis Ofertas</Link></ListItem>
                         <ListItem>Favoritos</ListItem>
                     </List>
                 </LeftNav>

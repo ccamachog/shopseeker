@@ -16,7 +16,7 @@ import { connect } from 'react-redux';
 class OfferScreen extends React.Component {
     constructor(props) {
         super(props);
-        this.configStatusBar();
+
     }
 
     render() {
@@ -46,6 +46,7 @@ class OfferScreen extends React.Component {
         )
     }
     configStatusBar = () =>{
+
         let action,headerInfo;
         headerInfo={
             title:'Añadir Oferta'
