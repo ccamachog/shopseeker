@@ -13,9 +13,9 @@ class OfferListScreen extends React.Component {
 
     render() {
         return (
-            <div style={{width:'100%'}}>
+            <div >
                 <ImgOfferList offers={this.props.offers} showOffer={this.showOffer} favoriteOffer={this.favoriteOffer} unfavoriteOffer={this.unfavoriteOffer}/>
-                <FlatFooter />
+                {/*<FlatFooter />*/}
             </div>
         );
     }

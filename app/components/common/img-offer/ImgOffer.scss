@@ -1,0 +1,90 @@
+.shopup-img-offer {
+  //display: inline-block;
+  position: relative;
+  background-color: #47d3cc !important;
+  margin-left: 0.5vw;
+  margin-top: 0.5vh;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  background-position: center;
+  align-self: flex-start;
+
+
+  align-self: stretch;
+
+  transition: width 0.7s ease-out;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    padding-top: 100%;
+    float: left;
+  }
+
+  &.important{
+    flex:1 1 0px;
+    max-width: 60vw;
+    max-height: 40vh;
+    //min-width: 25%;
+    min-width: 14rem;
+    min-height: 20rem;
+    /*max-width: 20rem;
+    max-height: 26rem;*/
+  }
+  &.normal{
+    flex:1 1 0px;
+    max-width: 30vw;
+    max-height: 30vh;
+    min-width: 8rem;
+    min-height: 14rem;
+    /*max-width: 14rem;
+    max-height: 16rem;*/
+  }
+
+  .title{
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    background-color: #40a070;
+  }
+
+  .avatar{
+
+  }
+
+  .price{
+    position: absolute;
+    bottom: 4.5rem;
+    left: 4%;
+    background-color: #40a070;
+  }
+
+  .fav-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+  }
+  .image{
+    /*height: auto;
+    min-width: 100%;
+    max-width: 100%;
+    position:absolute;
+    top:0px;
+    z-index: 0;*/
+    display: none;
+  }
+  .description{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background-color: lightgoldenrodyellow;
+    max-height: 4rem;
+    //overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    //display: none;
+  }
+}

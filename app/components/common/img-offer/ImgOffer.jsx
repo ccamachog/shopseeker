@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './ImgOffer.scss';
 
 import Checkbox from 'material-ui/lib/checkbox';
 import GridTile from 'material-ui/lib/grid-list/grid-tile';
@@ -20,6 +20,7 @@ import CardTitle from 'material-ui/lib/card/card-title';
 import FlatButton from 'material-ui/lib/flat-button';
 import CardText from 'material-ui/lib/card/card-text';
 
+import Paper from 'material-ui/lib/paper';
 
 export default class ImgOffer extends React.Component {
     constructor(props) {
@@ -75,33 +76,33 @@ export default class ImgOffer extends React.Component {
      */
     render() {
         const offer = this.props.offer;
-        const gradientBg = 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)';
+        //const gradientBg = 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)';
 
         return (
-            <Card
-
+            <Paper
+                className={'shopup-img-offer ' + (offer.rating >= 4 ? 'important' : 'normal') }
+                id="juan"
                 onClick={this.showOffer.bind(this)}
-                style={{background:'red'}}
+                zDepth={1}
+                rounded={true}
+                style={{backgroundImage:'url("http://lorempixel.com/200/200") !important' }}
             >
-                <CardHeader
-                    title={offer.title}
-                    subtitle={offer.price.min + ' - ' +offer.price.min}
-                    avatar="http://lorempixel.com/100/100/">
-                    <div style={{float:'right'}}>
+                <img className="image" src="http://lorempixel.com/200/200"/>
+
+                <span className="title">{offer.title}</span>
+                <span className="price">{offer.price.min + ' - ' +offer.price.min}</span>
+                <Avatar className="avatar" src="http://lorempixel.com/100/100/" />
+                <div className="fav-icon">
                     {offer.favorite?
                     <IconButton onClick={this.unfavoriteOffer.bind(this)}> <Favorite
                         color="white"/></IconButton>:
                     <IconButton onClick={this.favoriteOffer.bind(this)}><FavoriteBorder
                         color="white"/></IconButton>}
-                    </div>
-                </CardHeader>
-                <CardMedia>
-                        <img src="http://lorempixel.com/social"/>
-                </CardMedia>
-                <CardText>
-                    {offer.description}
-                </CardText>
-            </Card>
+                </div>
+                <span className="description">
+                    {offer.description}' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining '
+                </span>
+            </Paper>
         );
     };
 
