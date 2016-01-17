@@ -1,5 +1,5 @@
 import {Record} from 'immutable';
-let PriceRangeRecord = Record({
+const PriceRangeRecord = Record({
     min: 0.0,
     max: 0.0
 });

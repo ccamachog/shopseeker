@@ -21,6 +21,7 @@ export default class Map extends React.Component {
         return (
             <div style={{width:'100%',height:'320px'}}>
                 <GoogleMap
+                    bootstrapURLKeys={{key:'AIzaSyBAMklnkK2wzDczW686Kur06s6lczlBA1s',signed_in:true,libraries:'places'}}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}>
                     <MapPlace lat={59.955413} lng={30.337844} text={'A'} /* Kreyser Avrora */ />

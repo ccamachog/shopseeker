@@ -11,7 +11,7 @@ let HeaderStateRecord = Record({
 });
 
 
-export default function statusAppReducer(state = new HeaderStateRecord(), action = '') {
+export default function headerStateReducer(state = new HeaderStateRecord(), action = '') {
     switch (action.type) {
         case SET_HEADER_STATE:
         {
