@@ -24,34 +24,35 @@
   }
 
   &.important{
-    flex:1 1 0px;
+    flex:2 1 0px;
+
+    min-width: 22rem;
+    min-height: 26rem;
+
     max-width: 60vw;
-    max-height: 40vh;
-    //min-width: 25%;
-    min-width: 14rem;
-    min-height: 20rem;
-    /*max-width: 20rem;
-    max-height: 26rem;*/
+    max-height: 50vh;
   }
   &.normal{
     flex:1 1 0px;
+
+    min-width: 14rem;
+    min-height: 18rem;
+
     max-width: 30vw;
-    max-height: 30vh;
-    min-width: 8rem;
-    min-height: 14rem;
-    /*max-width: 14rem;
-    max-height: 16rem;*/
+    max-height: 40vh;
   }
 
   .title{
     position: absolute;
-    top: 4%;
-    left: 4%;
+    top: 0.75rem;
+    left: 2.5rem;
     background-color: #40a070;
   }
 
   .avatar{
-
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .price{

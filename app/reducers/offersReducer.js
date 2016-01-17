@@ -52,36 +52,43 @@ offers = offers.push(
     })
 );
 
-export default function OfferReducer(state = new List(), action = '') {
+let OffersStateRecord = Record({
+    selected:null,
+    list: offers
+});
 
-    if (state.size <= 0)
-        return offers;
+export default function OfferReducer(state = new OffersStateRecord(), action = '') {
+
+    //if (state.offers.size <= 0)
+    //    return offers;
     switch (action.type) {
         case SHOW_OFFER:
         {
-            let offerIndex = state.findIndex(offer=>offer.id == action.id);
+            let offerIndex = state.list.findIndex(offer=>offer.id == action.id);
+
             if (offerIndex !== -1) {
-                const offer = state.get(offerIndex);
-                alert('Offer: ' + offer.description);
-                return state;
+                const offer = state.list.get(offerIndex);
+                return state.set('selected',offer);
             } else {
-                return state;
+                return state.set('selected',null);
             }
         }
         case FAV_OFFER:
         {
-            let offerIndex = state.findIndex(offer=>offer.id == action.id);
+            let offerIndex = state.list.findIndex(offer=>offer.id == action.id);
             if (offerIndex !== -1) {
-                return state.update(offerIndex, (offer) => offer.set('favorite', true));
+                return state.set('list',
+                    state.list.update(offerIndex, (offer) => offer.set('favorite', true)));
             }else{
                 return state;
             }
         }
         case UNFAV_OFFER:
         {
-            let offerIndex = state.findIndex(offer=>offer.id == action.id);
+            let offerIndex = state.list.findIndex(offer=>offer.id == action.id);
             if (offerIndex !== -1) {
-                return state.update(offerIndex, (offer) => offer.set('favorite', false));
+                return state.set('list',
+                    state.list.update(offerIndex, (offer) => offer.set('favorite', false)));
             }else{
                 return state;
             }
