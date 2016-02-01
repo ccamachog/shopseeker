@@ -6,9 +6,10 @@ import MapPlace from './MapPlace';
 
 export default class Map extends React.Component {
     static defaultProps = {
-        center: {lat: 59.938043, lng: 30.337157},
+
+        center: {lat: 40.41676289999999,lng: -3.7036379999999554},
         zoom: 9,
-        greatPlaceCoords: {lat: 59.724465, lng: 30.080121}
+        offerList: []
     };
 
     shouldComponentUpdate = shouldPureComponentUpdate;
@@ -24,9 +25,12 @@ export default class Map extends React.Component {
                     bootstrapURLKeys={{key:'AIzaSyBAMklnkK2wzDczW686Kur06s6lczlBA1s',signed_in:true,libraries:'places'}}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}>
-                    <MapPlace lat={59.955413} lng={30.337844} text={'A'} /* Kreyser Avrora */ />
-                    <MapPlace   {...this.props.greatPlaceCoords} text={'B'} /* road circle */ />
+                    {
+
+                        this.props.offerList.map((offer)=><MapPlace key={offer.id} lat={offer.geo.lat} lng={offer.geo.lng}  />)
+                    }
                 </GoogleMap>
+
             </div>
         );
     }

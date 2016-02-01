@@ -3,6 +3,7 @@ import {List, Record} from 'immutable';
 import TagRecord from '../types/TagRecord';
 import OfferRecord from '../types/OfferRecord';
 import PriceRangeRecord from '../types/PriceRangeRecord';
+import GeoRecord from '../types/GeoRecord';
 
 let offers = new List();
 offers = offers.push(
@@ -15,7 +16,8 @@ offers = offers.push(
         tags: new List(),
         user: 1,
         rating: 1,
-        favorite: false
+        favorite: false,
+        geo: new GeoRecord({lat: 40.3812351,lng: -3.7491920999999593})
     }),
     new OfferRecord({
         id: 2,
@@ -26,7 +28,8 @@ offers = offers.push(
         tags: new List(),
         user: 1,
         rating: 5,
-        favorite: false
+        favorite: false,
+        geo: new GeoRecord({lat: 40.41676289999999,lng: -3.7036379999999554})
     }),
     new OfferRecord({
         id: 3,
@@ -37,7 +40,8 @@ offers = offers.push(
         tags: new List(),
         user: 2,
         rating: 3,
-        favorite: true
+        favorite: true,
+        geo: new GeoRecord({lat: 40.3256792,lng: -3.7683408999999983})
     }),
     new OfferRecord({
         id: 4,
@@ -48,7 +52,8 @@ offers = offers.push(
         tags: new List(),
         user: 3,
         rating: 3,
-        favorite: false
+        favorite: false,
+        geo: new GeoRecord({lat: 39.45953799999999,lng: -5.880235699999957})
     })
 );
 

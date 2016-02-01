@@ -4,7 +4,7 @@ import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 //import SwipeableViews from 'react-swipeable-views';
 import Map from '../../common/map/Map';
-import OfferListScreen from '../offer-list-screen/OfferListScreen';
+import OfferListScreen from '../offer-list-screen/OfferListScreen.jsx';
 import FilterScreen from '../filter-screen/FilterScreen';
 import {setHeaderState} from '../../../actions/HeaderStateAction';
 import { connect } from 'react-redux';
@@ -49,7 +49,7 @@ class HubScreen extends React.Component {
                     <OfferListScreen />
                 </Tab>
                 <Tab label="Map" value={TABS_ENUM.MAP}>
-                    <Map/>
+                    <Map offerList={this.props.offerList}/>
                 </Tab>
             </Tabs>
         );
@@ -115,6 +115,7 @@ class HubScreen extends React.Component {
 
 function select(state) {
     return {
+        offerList: state.offers.list.toArray()
     }
 }
 export default connect(select)(HubScreen)

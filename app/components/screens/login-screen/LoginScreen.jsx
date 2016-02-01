@@ -21,7 +21,6 @@ export default class LoginScreen extends React.Component {
     }
 
     responseFacebook(response) {
-        debugger;
         console.log(response);
     }
 }

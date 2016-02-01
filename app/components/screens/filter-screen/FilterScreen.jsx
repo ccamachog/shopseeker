@@ -132,7 +132,7 @@ class FilterScreen extends React.Component {
         let geometry = new GeoRecord({
             lat: place.geometry.location.lat(),
             lng:place.geometry.location.lng()
-        })
+        });
 
         locationRecord=locationRecord.set('geometry',geometry);
         this.filterRecord=this.filterRecord.set('location',locationRecord);

@@ -7,7 +7,7 @@ import './MapPlace.scss';
 
 export default class MapPlace extends React.Component {
     static propTypes = {
-        text: PropTypes.string
+        //text: PropTypes.string
     };
 
     static defaultProps = {};
